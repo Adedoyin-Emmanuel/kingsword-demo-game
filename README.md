@@ -41,6 +41,7 @@ Below are the technologies I used.
 | ---- | ------ | ----------- |
 | Update README.md File | [ in progress ] | [ yes ] |
 | Setup App Pages | [ done] | [yes ] |
+| Setup App Include Files | [ in progress] | [no ] |
 | Setup App Components | [ not yet] | [no ] |
 | Setup Application Routing | [ not yet] | [ no ] |
 | Frontend Development / Design | [ not yet] | [ no ] |
