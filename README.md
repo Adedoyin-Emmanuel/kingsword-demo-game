@@ -26,7 +26,7 @@ I would add this later
 
 
 #### Technologies
-Below are the technologies I used;
+Below are the technologies I used.
 - **ReactJS**
 - **Typescript**
 - **PWA Technology**
