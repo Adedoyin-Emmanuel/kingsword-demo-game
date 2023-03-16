@@ -43,7 +43,7 @@ Below are the technologies I used.
 | Setup App Pages | [ done] | [yes ] |
 | Setup App Include Files | [ in progress] | [no ] |
 | Setup App Components | [ not yet] | [no ] |
-| Setup Application Routing | [ not yet] | [ no ] |
+| Setup Application Routing | [in progress] | [ yes ] |
 | Frontend Development / Design | [ not yet] | [ no ] |
 | Firebase Connection | [ not yet] | [ no ] |
 
