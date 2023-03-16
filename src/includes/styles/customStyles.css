@@ -1,4 +1,4 @@
-/*Custom styles for project*/
+/*Custom font family definitions for the project*/
 
 @font-face
 {
@@ -18,3 +18,33 @@
 {
     font-family: poppins;
 }
+
+
+/*Project variables definitions */
+
+::root
+{
+    --brand-primary-color:lightskyblue;
+    --brand-small-text:.9rem;
+    --brand-small-text-2: .8rem;
+    --brand-small-text-3: .78rem;    
+}
+
+
+.brand-small-text
+{
+    font-size:var(--brand-small-text);
+}
+
+
+.brand-small-text-2
+{
+    font-size:var(--brand-small-text-2);
+}
+
+
+.brand-small-text-3
+{
+    font-size:var(--brand-small-text-3);
+}
+
