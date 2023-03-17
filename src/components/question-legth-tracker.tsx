@@ -10,7 +10,7 @@ const QuestionLengthTracker = ({currentQuestion, totalQuestionLength}: questionL
 {
     return (
         <React.Fragment>
-           <p className="text-captalize text-center text-muted">question {currentQuestion} out of {totalQuestionLength}</p>      
+           <p className="text-capitalize text-center text-muted">question {currentQuestion} of {totalQuestionLength}</p>      
         </React.Fragment>
     )
 }
