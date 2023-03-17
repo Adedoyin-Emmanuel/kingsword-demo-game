@@ -6,7 +6,6 @@ import Swal from "sweetalert2";
 import ChurchImage from "./../assets/images/family7.svg";
 import Button from "../components/button";
 import db from "../backend/db";
-import { writeFile } from "fs";
 
 const Home = (): JSX.Element => {
   const navigateTo = useNavigate();
@@ -22,7 +21,6 @@ const Home = (): JSX.Element => {
       inputAttributes: {
         autocapitalize: "on",
         style: "font-size:var(--brand-small-text)",
-       
       },
       customClass: {
         popup: "z-index-class",
@@ -31,19 +29,17 @@ const Home = (): JSX.Element => {
     }).then((willProceed) => {
       if (willProceed.isConfirmed) {
         const $legit_value = willProceed.value.trim();
-        if ($legit_value === undefined || $legit_value == "")
-        {
+        if ($legit_value === undefined || $legit_value == "") {
           Swal.fire({
             title: `<h3 class="fw-bold">Invalid Input!</h4>`,
             html: "<p class=' text-center text-danger brand-small-text'>*Please enter your name*</p>",
-            confirmButtonColor:  "rgb(248, 79, 79)",
+            confirmButtonColor: "rgb(248, 79, 79)",
             allowOutsideClick: false,
             allowEscapeKey: false,
             allowEnterKey: false,
             timer: 4000,
           });
-          
-        }else{
+        } else {
           db.create("KINGSWORD_GAME_USERNAME", willProceed.value);
           navigateTo("/app/category");
         }
