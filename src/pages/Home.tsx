@@ -1,12 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import CurrentPageNotch from "../components/app-current-page-notch";
 import Footer from "../components/app-footer";
 import Swal from "sweetalert2";
 import ChurchImage from "./../assets/images/family7.svg";
 import Button from "../components/button";
 import db from "../backend/db";
+import { writeFile } from "fs";
 
 const Home = (): JSX.Element => {
+  const navigateTo = useNavigate();
   const handleButtonClick = (): void => {
     Swal.fire({
       title: `<h3 class="fw-bold">Enter your name</h4>`,
@@ -40,6 +43,9 @@ const Home = (): JSX.Element => {
             timer: 4000,
           });
           
+        }else{
+          db.create("KINGSWORD_GAME_USERNAME", willProceed.value);
+          navigateTo("/app/category");
         }
       } else {
         window.location.reload();
