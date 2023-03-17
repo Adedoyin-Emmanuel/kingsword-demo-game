@@ -31,7 +31,8 @@
     --brand-category-love-color-2:rgb(211, 105, 105);
     --brand-small-text:   0.9rem;
     --brand-small-text-2: 0.8rem;
-    --brand-small-text-3: 0.78rem;    
+    --brand-small-text-3: 0.78rem;   
+    --brand-button-border-radius: 15px;
 }
 
 /*application font size styles*/
@@ -74,6 +75,8 @@
 {
     background:var(--brand-category-love-color-2);
 }
+
+
 /*application footer styling*/
 .app-footer
 {   
@@ -91,4 +94,87 @@
     margin-top: 5px;
     background:var(--brand-category-love-color-2);
     outline:2px solid var(--brand-white-color);
+}
+
+
+/*spinner component*/
+
+#spinner {
+	background: var(--brand-primary-dark-color);
+	height: 80vh;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 10000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/*home page main container styling*/
+
+.main-app-container
+{
+    height: 100vh;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 10000;
+}
+
+
+/*app button styling*/
+.brand-button{
+	border-radius: var(--brand-button-border-radius);
+	outline: none;
+	border: 0;
+	text-transform: capitalize;
+	background: var(--brand-category-love-color);
+	padding:10px;
+	width:60%;
+	cursor: pointer;
+
+}
+
+
+
+
+
+
+
+
+
+
+/*custom responsiveness*/
+@media (min-width: 667.98px) {
+	.width-toggle {
+		width: 35%;
+	}
+	.width-toggle-2 {
+		width: 75%;
+		
+	}
+	.width-toggle-5{
+		width:90%;
+	}
+
+	.width-toggle-3 {
+		width: 50%;
+	}
+	.width-toggle-4{
+		width:30%;
+	}
+	.width-toggle-7{
+		width:40%;
+	}
+	.width-toggle-6{
+		width:25%;
+	}
+
+	.width-toggle-dash{
+		width:20%;
+	}
+
 }
