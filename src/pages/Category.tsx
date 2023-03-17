@@ -2,6 +2,7 @@ import React, { useState, useMemo } from "react";
 import CategorySelection from "../components/category-selection";
 import FooterSlider from "../components/footer-slider";
 import db from "../backend/db";
+import { useNavigate } from "react-router-dom";
 
 const Category = (): JSX.Element => {
   const userName = db.get("KINGSWORD_GAME_USERNAME") || "user";
@@ -9,10 +10,12 @@ const Category = (): JSX.Element => {
   const [elementToInsert, setElementToInsert] = useState<JSX.Element>(
     <React.Fragment></React.Fragment>
   );
+  
+  const navigateTo = useNavigate();
 
   const testClick = (event:any) => {
-    console.log(event.target.id);
-    
+    //console.log(event.target.id);
+    navigateTo(`/app/category/${event.target.id.trim()}`);
   };
 
   useMemo(() => {
