@@ -1,0 +1,36 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "text": "What is the capital of France?",
+      "category": "Geography"
+    },
+    {
+      "id": 2,
+      "text": "What is the largest planet in our solar system?",
+      "category": "Science"
+    },
+    {
+      "id": 3,
+      "text": "Who painted the Mona Lisa?",
+      "category": "Art"
+    }
+  ],
+  "answers": [
+    {
+      "id": 1,
+      "questionId": 1,
+      "text": "Paris"
+    },
+    {
+      "id": 2,
+      "questionId": 2,
+      "text": "Jupiter"
+    },
+    {
+      "id": 3,
+      "questionId": 3,
+      "text": "Leonardo da Vinci"
+    }
+  ]
+}
