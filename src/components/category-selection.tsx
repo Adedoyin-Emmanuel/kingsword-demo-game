@@ -3,14 +3,16 @@ import React from 'react'
 interface categorySelectionProp
 {
     categoryText: string;
-    onClick: () => void;
+    id:string;
+    onClick: (event:any) => void;
+    
 }
-const CategorySelection = ({categoryText, onClick}: categorySelectionProp):JSX.Element => {
+const CategorySelection = ({categoryText, id, onClick}: categorySelectionProp):JSX.Element => {
     return (
     
         <React.Fragment>
-            <section className="d-flex align-items-center justify-content-center flex-column ">
-            <section className="category-selection mx-3" onClick={onClick}>
+            <section className="d-flex align-items-center justify-content-center flex-column" >
+            <section className="category-selection mx-3" onClick={onClick} id={id}>
                  
             </section>
             

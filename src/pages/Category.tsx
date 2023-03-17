@@ -10,8 +10,9 @@ const Category = (): JSX.Element => {
     <React.Fragment></React.Fragment>
   );
 
-  const testClick = () => {
-    console.log("hello world");
+  const testClick = (event:any) => {
+    console.log(event.target.id);
+    
   };
 
   useMemo(() => {
@@ -19,10 +20,11 @@ const Category = (): JSX.Element => {
       return (
         <section className="footer-slider-body d-flex align-items-center justify-content-center">
           <section className="game-categories my-5 d-flex align-items-center justify-content-around flex-wrap">
-            <CategorySelection categoryText="love refs" onClick={testClick} />
-            <CategorySelection categoryText="marriage" onClick={testClick} />
-            <CategorySelection categoryText="blessing" onClick={testClick} />
-            <CategorySelection categoryText="favour" onClick={testClick} />
+            <CategorySelection categoryText="love refs" onClick={(event:any)=>testClick(event)} id={"love"} />
+            <CategorySelection categoryText="marriage" onClick={(event:any)=>testClick(event)} id={"marriage"}/>
+            <CategorySelection categoryText="blessing" onClick={(event:any)=>testClick(event)} id={"blessing"}/>
+            <CategorySelection categoryText="faith" onClick={(event:any)=>testClick(event)} id={"faith"}/>
+            
           </section>
         </section>
       );

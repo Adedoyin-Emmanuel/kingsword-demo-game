@@ -182,8 +182,8 @@
 
 .category-selection
 {
-    width:80px;
-    height:80px;
+    width:90px;
+    height:90px;
     border-radius: 50% !important;
     background: var(--brand-category-love-color-3);
     outline:5px solid var(--brand-white-color);
