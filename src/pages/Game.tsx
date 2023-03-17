@@ -15,7 +15,6 @@ const Game = (): JSX.Element => {
           {" "}
           <p style={{"color":"var(--brand-category-love-color)"}} className="m-0 d-inline">{category}</p> category
         </h5>
-        <p className="text-captalize text-center text-muted">question 1 out of 25</p>
         <section className="game-area d-flex jusify-content-center flex-column my-">
           <Question question="do you love me ? " />
           <section className="answer-area d-flex align-items-around justify-content-center flex-wrap p-4">
