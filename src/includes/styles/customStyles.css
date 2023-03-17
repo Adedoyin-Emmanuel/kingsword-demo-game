@@ -121,10 +121,13 @@
 	position: fixed;
 	top: 0;
 	right: 0;
-	z-index: 10000;
+	
 }
 
-
+.z-index-class
+{
+    z-index:100000;
+}
 /*app button styling*/
 .brand-button{
 	border-radius: var(--brand-button-border-radius);
@@ -145,9 +148,10 @@
     color:var(--brand-white-color);
 }
 
-
-
-
+.swal-confirm-button
+{
+    border-radius: var(--brand-button-border-radius);
+}
 
 
 

@@ -7,7 +7,27 @@ import Button from "../components/button";
 
 const Home = (): JSX.Element => {
   const handleButtonClick = (): void => {
-    alert("you clicked me");
+      Swal.fire({
+        title:`<h3 class="fw-bold">Enter your name</h4>`,
+        input:"text",
+        confirmButtonColor:"rgb(248, 79, 79)",
+        allowOutsideClick: false,
+        allowEnterKey:true,
+        allowEscapeKey:false,
+        showCancelButton:false,
+        inputAttributes: {
+          style: 'font-size:var(--brand-small-text)'
+        },
+        customClass: {
+          popup: 'z-index-class',
+          confirmButton: 'swal-confirm-button',
+        },
+      }).then((willProceed)=>{
+          if(willProceed.isConfirmed)
+          {
+            alert(willProceed.value);
+          }
+      }); 
   };
   return (
     <React.Fragment>
@@ -21,7 +41,7 @@ const Home = (): JSX.Element => {
         
         <section className="main-app-container d-flex justify-content-center flex-column">
           <section className="image-section d-flex align-items-center justify-content-center">
-            <img src={ChurchImage} className="" width={"450"} height={"300"} />
+            <img src={ChurchImage} className="m-auto" width={"450"} height={"300"} />
           </section>
 
           <section className="button-container d-flex align-items-center justify-content-center my-4">
