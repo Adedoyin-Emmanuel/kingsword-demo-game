@@ -216,8 +216,8 @@
 .answer-container-inner-section
 {
     background:var(--brand-white-color);
-    width:70px;
-    height:70px;
+    width:90px;
+    height:90px;
     border-radius: 50% !important;
     border:5px solid var(--brand-category-love-color);
     transition: .7s;

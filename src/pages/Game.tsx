@@ -107,7 +107,7 @@ const Game = (): JSX.Element => {
 
         <section className="game-area d-flex jusify-content-center flex-column my-2 ">
           <QuestionLengthTracker
-            currentQuestion={1}
+            currentQuestion={counter + 1}
             totalQuestionLength={parseInt(
               db.get("KINGSWORD_GAME_TOTAL_QUESTIONS")
             )}
@@ -116,25 +116,25 @@ const Game = (): JSX.Element => {
           <section className="container d-flex align-items-center justify-content-center">
             <section className="answer-area row">
               <Answer
-                text="false"
+                text={(questions) && questions.options[0]}
                 onClick={(event: MouseEvent<HTMLDivElement>) =>
                   handleAnswerClick(event)
                 }
               />
               <Answer
-                text="true"
+                text={(questions) && questions.options[1]}
                 onClick={(event: MouseEvent<HTMLDivElement>) =>
                   handleAnswerClick(event)
                 }
               />
               <Answer
-                text="no"
+               text={(questions) && questions.options[2]}
                 onClick={(event: MouseEvent<HTMLDivElement>) =>
                   handleAnswerClick(event)
                 }
               />
               <Answer
-                text="yes"
+               text={(questions) && questions.options[3]}
                 onClick={(event: MouseEvent<HTMLDivElement>) =>
                   handleAnswerClick(event)
                 }
