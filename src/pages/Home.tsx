@@ -10,43 +10,47 @@ import db from "../backend/db";
 const Home = (): JSX.Element => {
   const navigateTo = useNavigate();
   const handleButtonClick = (): void => {
-    Swal.fire({
-      title: `<h3 class="fw-bold">Enter your name</h4>`,
-      input: "text",
-      confirmButtonColor: "rgb(248, 79, 79)",
-      allowOutsideClick: false,
-      allowEnterKey: true,
-      allowEscapeKey: false,
-      showCancelButton: false,
-      inputAttributes: {
-        autocapitalize: "on",
-        style: "font-size:var(--brand-small-text)",
-      },
-      customClass: {
-        popup: "z-index-class",
-        confirmButton: "swal-confirm-button",
-      },
-    }).then((willProceed) => {
-      if (willProceed.isConfirmed) {
-        const $legit_value = willProceed.value.trim();
-        if ($legit_value === undefined || $legit_value == "") {
-          Swal.fire({
-            title: `<h3 class="fw-bold">Invalid Input!</h4>`,
-            html: "<p class=' text-center text-danger brand-small-text'>*Please enter your name*</p>",
-            confirmButtonColor: "rgb(248, 79, 79)",
-            allowOutsideClick: false,
-            allowEscapeKey: false,
-            allowEnterKey: false,
-            timer: 4000,
-          });
+    if (db.get("KINGSWORD_GAME_USERNAME")) {
+      navigateTo("/app/category");
+    } else {
+      Swal.fire({
+        title: `<h3 class="fw-bold">Enter your name</h4>`,
+        input: "text",
+        confirmButtonColor: "rgb(248, 79, 79)",
+        allowOutsideClick: false,
+        allowEnterKey: true,
+        allowEscapeKey: false,
+        showCancelButton: false,
+        inputAttributes: {
+          autocapitalize: "on",
+          style: "font-size:var(--brand-small-text)",
+        },
+        customClass: {
+          popup: "z-index-class",
+          confirmButton: "swal-confirm-button",
+        },
+      }).then((willProceed) => {
+        if (willProceed.isConfirmed) {
+          const $legit_value = willProceed.value.trim();
+          if ($legit_value === undefined || $legit_value == "") {
+            Swal.fire({
+              title: `<h3 class="fw-bold">Invalid Input!</h4>`,
+              html: "<p class=' text-center text-danger brand-small-text'>*Please enter your name*</p>",
+              confirmButtonColor: "rgb(248, 79, 79)",
+              allowOutsideClick: false,
+              allowEscapeKey: false,
+              allowEnterKey: false,
+              timer: 4000,
+            });
+          } else {
+            db.create("KINGSWORD_GAME_USERNAME", willProceed.value);
+            navigateTo("/app/category");
+          }
         } else {
-          db.create("KINGSWORD_GAME_USERNAME", willProceed.value);
-          navigateTo("/app/category");
+          window.location.reload();
         }
-      } else {
-        window.location.reload();
-      }
-    });
+      });
+    }
   };
   return (
     <React.Fragment>
