@@ -34,6 +34,7 @@ const Game = (): JSX.Element => {
   const { category } = useParams();
   const [quizData, setQuizData] = useState<QuizData | null>(null);
   const [dataToUser, setDataToUser] = useState();
+  const [buttonClick, setButtonClick] = useState<boolean>(false)
 
   useEffect(() => {
     const fetchData = () => {
@@ -45,32 +46,46 @@ const Game = (): JSX.Element => {
     const getData = async () => {
       const response = await fetchData();
       const returnedData = response.questions;
+      db.create("KINGSWORD_GAME_TOTAL_QUESTIONS", returnedData.length);
+
+      setDataToUser(
+        returnedData.map((data: Questions, dataIndex: number) => {
+          return data;
+        })
+      );
       
-      setDataToUser(returnedData.map((data:Questions, dataIndex:number) =>{
-         // console.log(data);
-          
-          const {id, question, category, options, correctAnswer} = data;
-          db.create("INGSWORD_GAME_TOTAL_QUESTIONS", returnedData.length);
-          
-          
-          
-        
-          
-          
-      }));
     };
-    
-    
+
     getData();
     
+  },[buttonClick]);
+  
+  
+  //define come variables for the overall game
+  // const [playingGame, setPlayingGame] = useState<boolean>(false);
+  // const [questions, setQuestions] = useState<Questions | null>(null);
+  // const [currentQuestion, setCurrentQuestion] = useState<Questions | null>(null);
+  // const [correctAnswer, setCorrectAnswer] = useState<number | null>(null);
+  // const [totalQuestions, setTotalQuestions] = useState<number | null>(null);
+  // const [totalAnswers, setTotalAnswers] = useState<number | null>(null);
+  // const [questionLength, setQuestionLength] = useState<number | null>(null);
+  
+
+  
+  let questionIncrement = 0;
+  const [counter, setCounter] = useState<number>(0);
+  var questions;
+  
+  if(dataToUser)
+  {
+    questions = dataToUser[counter];
     
-    
-   
-    
-  }, []);
+  }
+  
 
   const handleButtonClick = (): void => {
-    console.log("You clicked me");
+    setButtonClick(true);
+    setCounter(counter + 1);
   };
   const handleAnswerClick = (event: MouseEvent<HTMLDivElement>) => {
     console.log(event.currentTarget.textContent);
@@ -92,8 +107,13 @@ const Game = (): JSX.Element => {
         <br />
 
         <section className="game-area d-flex jusify-content-center flex-column my-2     ">
-          <QuestionLengthTracker currentQuestion={1} totalQuestionLength={25} />
-          <Question question="do you love me ? " />
+          <QuestionLengthTracker
+            currentQuestion={1}
+            totalQuestionLength={parseInt(
+              db.get("KINGSWORD_GAME_TOTAL_QUESTIONS")
+            )}
+          />
+          <Question question={(questions) && questions.question} />
           <section className="container d-flex align-items-center justify-content-center">
             <section className="answer-area row">
               <Answer
