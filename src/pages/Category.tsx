@@ -23,7 +23,7 @@ const Category = (): JSX.Element => {
       return (
         <section className="footer-slider-body d-flex align-items-center justify-content-center">
           <section className="game-categories my-5 d-flex align-items-center justify-content-around flex-wrap">
-            <CategorySelection categoryText="love refs" onClick={(event:any)=>testClick(event)} id={"love"} />
+            <CategorySelection categoryText="love revs" onClick={(event:any)=>testClick(event)} id={"love"} />
             <CategorySelection categoryText="marriage" onClick={(event:any)=>testClick(event)} id={"marriage"}/>
             <CategorySelection categoryText="blessing" onClick={(event:any)=>testClick(event)} id={"blessing"}/>
             <CategorySelection categoryText="faith" onClick={(event:any)=>testClick(event)} id={"faith"}/>
