@@ -11,6 +11,8 @@ const Game =  ():JSX.Element => {
         <React.Fragment>
             <section className="container-fluid p-0">
                <h3 className="fs-3 fw-bold my-3 p-2"> You selected the {category} category</h3>
+               
+               
                <Footer categoryPage={<CurrentPageNotch/>}/>
             </section>
         </React.Fragment>
