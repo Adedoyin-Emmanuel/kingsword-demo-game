@@ -6,7 +6,7 @@ const NotFound = (): JSX.Element =>{
         <React.Fragment>
             
             <section className="container-fluid">
-            
+                <h4>  looks like you are lost!</h4>
             </section>
             
         </React.Fragment>
