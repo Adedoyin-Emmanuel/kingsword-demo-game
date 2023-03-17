@@ -199,6 +199,24 @@
 
 
 
+/*questions and answers styling*/
+
+.answer-container
+{
+    width:80px;
+    height:80px;
+    border-radius:50% !important;
+    background: var(--brand-category-love-color);
+    
+}
+.answer-container-inner-section
+{
+    background:var(--brand-white-color);
+    width:60px;
+    height:60px;
+    border-radius: 50% !important;
+}
+
 /*custom responsiveness*/
 @media (min-width: 667.98px) {
 	.width-toggle {

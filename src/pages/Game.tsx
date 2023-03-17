@@ -17,7 +17,11 @@ const Game =  ():JSX.Element => {
                <Question question="i love you"/>
                
                
-               <Answer text="1"/>
+               <Answer text="false"/>
+               <Answer text="true"/>
+               <Answer text="false"/>
+               <Answer text="no"/>
+               <Answer text="yes"/>
                
                <Footer categoryPage={<CurrentPageNotch/>}/>
             </section>
