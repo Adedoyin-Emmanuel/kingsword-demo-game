@@ -41,12 +41,12 @@ Below are the technologies I used.
 | ---- | ------ | ----------- |
 | Update README.md File | [ in progress ] | [ yes ] |
 | Setup App Pages | [ done] | [yes ] |
-| Setup App Include Files | [ in progress] | [no ] |
-| Setup App Components | [ not yet] | [no ] |
-| Setup Application Routing | [in progress] | [ yes ] |
+| Setup App Include Files | [ in progress] | [yes ] |
+| Setup App Components | [ done] | [yes ] |
+| Setup Application Routing | [done ] | [ yes ] |
 | Frontend Development / Design | [ not yet] | [ no ] |
 | Firebase Connection | [ not yet] | [ no ] |
-
+| Project Conclusion | [ not yet] | [ no ] |
 
 
 #### Author
