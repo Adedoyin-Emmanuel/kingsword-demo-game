@@ -1,6 +1,6 @@
 import React, { MouseEvent, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
+import Swal from "sweetalert2";
 import Question from "../components/question";
 import Answer from "../components/answer";
 import QuestionLengthTracker from "../components/question-legth-tracker";
@@ -33,7 +33,11 @@ const Game = (): JSX.Element => {
   const { category } = useParams();
   const [quizData, setQuizData] = useState<QuizData | null>(null);
   const [dataToUser, setDataToUser] = useState();
-  const [buttonClick, setButtonClick] = useState<boolean>(false)
+  const [buttonClick, setButtonClick] = useState<boolean>(false);
+  const [answerSelected, setAnswerSelected] = useState<boolean>(false);
+  const [currentAnswerSelected, setCurrentAnswerSelected] =
+    useState<string>(" ");
+  const [correctAnswer, setCorrectAnswer] = useState<number>(0);
 
   useEffect(() => {
     const fetchData = () => {
@@ -52,14 +56,11 @@ const Game = (): JSX.Element => {
           return data;
         })
       );
-      
     };
 
     getData();
-    
-  },[buttonClick]);
-  
-  
+  }, [buttonClick]);
+
   //define come variables for the overall game
   // const [playingGame, setPlayingGame] = useState<boolean>(false);
   // const [questions, setQuestions] = useState<Questions | null>(null);
@@ -68,26 +69,46 @@ const Game = (): JSX.Element => {
   // const [totalQuestions, setTotalQuestions] = useState<number | null>(null);
   // const [totalAnswers, setTotalAnswers] = useState<number | null>(null);
   // const [questionLength, setQuestionLength] = useState<number | null>(null);
-  
 
-  
   let questionIncrement = 0;
   const [counter, setCounter] = useState<number>(0);
   var questions;
-  
-  if(dataToUser)
-  {
+
+  if (dataToUser) {
     questions = dataToUser[counter];
-    
   }
-  
 
   const handleButtonClick = (): void => {
-    setButtonClick(true);
-    setCounter(counter + 1);
+    //check if answer matches
+    console.log(currentAnswerSelected);
+
+    //
+    if (currentAnswerSelected == " ") {
+      Swal.fire({
+        toast: true,
+        text: "Select an option ",
+        icon: "error",
+        position: "top",
+        timer: 3000,
+        showConfirmButton: false,
+      }).then((willProceed: any) => {
+        return;
+      });
+    } else {
+      setButtonClick(true);
+      setCounter(counter + 1);
+
+      for (let i = 0; i < questions.options.length; i++) {
+        if (questions.options[i] == currentAnswerSelected) {
+          setCorrectAnswer(correctAnswer + 1);
+        }
+      }
+    }
   };
   const handleAnswerClick = (event: MouseEvent<HTMLDivElement>) => {
     console.log(event.currentTarget.textContent);
+    setAnswerSelected(true);
+    setCurrentAnswerSelected(event.currentTarget.textContent);
   };
 
   return (
@@ -112,29 +133,29 @@ const Game = (): JSX.Element => {
               db.get("KINGSWORD_GAME_TOTAL_QUESTIONS")
             )}
           />
-          <Question question={(questions) && questions.question} />
+          <Question question={questions && questions.question} />
           <section className="container d-flex align-items-center justify-content-center">
             <section className="answer-area row">
               <Answer
-                text={(questions) && questions.options[0]}
+                text={questions && questions.options[0]}
                 onClick={(event: MouseEvent<HTMLDivElement>) =>
                   handleAnswerClick(event)
                 }
               />
               <Answer
-                text={(questions) && questions.options[1]}
+                text={questions && questions.options[1]}
                 onClick={(event: MouseEvent<HTMLDivElement>) =>
                   handleAnswerClick(event)
                 }
               />
               <Answer
-               text={(questions) && questions.options[2]}
+                text={questions && questions.options[2]}
                 onClick={(event: MouseEvent<HTMLDivElement>) =>
                   handleAnswerClick(event)
                 }
               />
               <Answer
-               text={(questions) && questions.options[3]}
+                text={questions && questions.options[3]}
                 onClick={(event: MouseEvent<HTMLDivElement>) =>
                   handleAnswerClick(event)
                 }
@@ -150,7 +171,6 @@ const Game = (): JSX.Element => {
             />
           </section>
         </section>
-
       </section>
     </React.Fragment>
   );
