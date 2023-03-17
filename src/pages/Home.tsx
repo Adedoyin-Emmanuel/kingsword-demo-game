@@ -2,6 +2,8 @@ import React from "react";
 import CurrentPageNotch from '../components/app-current-page-notch';
 import Footer from "../components/app-footer";
 import Swal from "sweetalert2";
+import ChurchImage from "./../assets/images/family7.svg";
+
 const Home = (): JSX.Element => {
   return (
     <React.Fragment>
@@ -9,6 +11,10 @@ const Home = (): JSX.Element => {
         <h3 className="fs-3 my-3 text-capitalize text-start px-3 fw-bold">Hi!</h3>
         
         <p className="text-capitalize px-3">welcome to kingsword game!</p>
+        
+        <section className="image-section">
+          <img src={}/>
+        </section>
         <Footer homePage={<CurrentPageNotch/>} />
       </section>
     </React.Fragment>
