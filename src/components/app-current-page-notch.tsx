@@ -1,11 +1,10 @@
 import React from 'react'
 
-
-const currentPageNotch = ():JSX.Element => {
+const CurrentPageNotch = ():JSX.Element => {
     return(
         <React.Fragment>
             
-            <section className="current-page-notch brand-primary-color">
+            <section className="current-page-notch">
             
             </section>
             
@@ -14,4 +13,4 @@ const currentPageNotch = ():JSX.Element => {
 }
 
 
-export default currentPageNotch;
+export default CurrentPageNotch;

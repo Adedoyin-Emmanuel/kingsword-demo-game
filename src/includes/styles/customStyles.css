@@ -22,15 +22,15 @@
 
 /*Project variables definitions */
 
-::root
+:root
 {
     --brand-primary-color:lightskyblue;
     --brand-secondary-color:rgb(103, 192, 248);
     --brand-white-color:#fff;
-    --brand-category-love-color:rgb(245, 84, 84);
-    --brand-small-text:.9rem;
-    --brand-small-text-2: .8rem;
-    --brand-small-text-3: .78rem;    
+    --brand-category-love-color:rgb(248, 79, 79);
+    --brand-small-text:   0.9rem;
+    --brand-small-text-2: 0.8rem;
+    --brand-small-text-3: 0.78rem;    
 }
 
 /*application font size styles*/
@@ -67,4 +67,23 @@
 .brand-category-love-color
 {
     background:var(--brand-category-love-color);
+}
+
+
+/*application footer styling*/
+.app-footer
+{   
+    position: fixed;
+    bottom:0;
+    width:100%; 
+}
+
+
+.current-page-notch
+{
+    width:5px;
+    height:5px;
+    border-radius:50% !important;
+    margin-top: 5px;
+    background:var(--brand-white-color);
 }

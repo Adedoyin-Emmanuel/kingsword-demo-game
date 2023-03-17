@@ -12,7 +12,7 @@ const App = (): JSX.Element => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
+          <Route path="/app" element={<Home />} />
           <Route path="/app/category" element={<Category />} />
           <Route path="/app/category/result" element={<Result />} />
           <Route path="*" element={<NotFound />} />
