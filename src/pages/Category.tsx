@@ -25,7 +25,7 @@ const Category = (): JSX.Element => {
     const element = (): JSX.Element => {
       return (
         <section className="footer-slider-body d-flex align-items-center justify-content-center">
-          <section className="game-categories my-5 d-flex align-items-center justify-content-around flex-wrap">
+          <section className="game-categories my-5 d-flex align-items-center justify-content-around flex-wrap row">
             <CategorySelection
               categoryText="love revs"
               onClick={(event: MouseEvent<HTMLDivElement>) => testClick(event)}

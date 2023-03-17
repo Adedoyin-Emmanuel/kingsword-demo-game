@@ -12,7 +12,7 @@ const CategorySelection = ({categoryText, id, onClick, categoryImageSource}: cat
     return (
     
         <React.Fragment>
-            <section className="d-flex align-items-center justify-content-center flex-column" >
+            <section className="d-flex align-items-center justify-content-center flex-column col-6 col-md-3" >
             <section className="category-selection mx-3" onClick={onClick} id={id}>
                 <img src={categoryImageSource} className="img-fluid" alt={"category images"}/>
             </section>
