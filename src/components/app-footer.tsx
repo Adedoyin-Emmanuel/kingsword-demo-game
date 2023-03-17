@@ -2,7 +2,7 @@ import React from "react";
 import CategoryIcon from "./../assets/images/category.svg";
 import HomeIcon from "./../assets/images/home.svg";
 import RecentIcon from "./../assets/images/recent.svg";
-
+import {navigateToHome, navigateToCategory, navigateToResult} from "./../includes/scripts/script";
 interface footerActivePageNotch {
   homePage?: JSX.Element;
   categoryPage?: JSX.Element;

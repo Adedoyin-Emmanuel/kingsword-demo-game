@@ -1,19 +1,21 @@
-import { useNavigate } from "react-router-dom";
 
+
+const navigateToPage = (page:string) =>{
+    window.location.href=`${page}`
+}
 /*handle the app footer navigation*/
-const navigateToPage = useNavigate();
 
-const navigateToHome = ():void =>
+export const navigateToHome = ():void =>
 {
     navigateToPage("/app");
 }
 
-const navigateToCategory = ():void =>
+export const navigateToCategory = ():void =>
 {
     navigateToPage("app/category");
 }
 
-const navigateToResult = ():void =>{
+export const navigateToResult = ():void =>{
 
     navigateToPage("/app/result");
 }
