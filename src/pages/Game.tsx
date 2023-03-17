@@ -7,6 +7,7 @@ import Answer from "../components/answer";
 import QuestionLengthTracker from "../components/question-legth-tracker";
 import Button from "../components/button";
 import $ from "jquery";
+import db from "../backend/db";
 
 /*question interface*/
 
@@ -32,6 +33,7 @@ interface AjaxResponse {
 const Game = (): JSX.Element => {
   const { category } = useParams();
   const [quizData, setQuizData] = useState<QuizData | null>(null);
+  const [dataToUser, setDataToUser] = useState();
 
   useEffect(() => {
     const fetchData = () => {
@@ -42,13 +44,29 @@ const Game = (): JSX.Element => {
 
     const getData = async () => {
       const response = await fetchData();
-      const data = response.questions;
+      const returnedData = response.questions;
       
-      setQuizData(data);
+      setDataToUser(returnedData.map((data:Questions, dataIndex:number) =>{
+         // console.log(data);
+          
+          const {id, question, category, options, correctAnswer} = data;
+          db.create("INGSWORD_GAME_TOTAL_QUESTIONS", returnedData.length);
+          
+          
+          
+        
+          
+          
+      }));
     };
     
     
     getData();
+    
+    
+    
+   
+    
   }, []);
 
   const handleButtonClick = (): void => {
