@@ -27,18 +27,18 @@
         "correctAnswer": 0
         
     },
-    
+   
     {
         "id": 3,
-        "question": "What type of love does God have for us?",
+        "question": "Is romantic love enough for a marriage?",
         "category": "love",
         "options":[
-           "Agape",
-           "Romantic",
-           "",
-           "Family"
+           "yes",
+           "no",
+           "maybe",
+           "probably"
         ],
-        "correctAnswer": 0
+        "correctAnswer": 1
         
     },
     
@@ -115,31 +115,32 @@
     
     {
         "id": 9,
-        "question": "What type of love does God have for us?",
+        "question": "What type of love is the God's kind of love?",
         "category": "love",
         "options":[
-           "Agape",
-           "Romantic",
-           "",
-           "Family"
+           "eros",
+           "phlia",
+           "storge",
+           "agape"
         ],
-        "correctAnswer": 0
+        "correctAnswer": 3
         
     },
     
     {
         "id": 10,
-        "question": "What type of love does God have for us?",
+        "question": "What type of love is the friendship love?",
         "category": "love",
         "options":[
-           "Agape",
-           "Romantic",
-           "",
-           "Family"
+           "eros",
+           "phlia",
+           "storge",
+           "agape"
         ],
-        "correctAnswer": 0
+        "correctAnswer": 1
         
     }
   ]
   
 }
+
