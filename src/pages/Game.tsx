@@ -8,7 +8,6 @@ import QuestionLengthTracker from "../components/question-legth-tracker";
 import Button from "../components/button";
 import $ from "jquery";
 
-
 /*question interface*/
 
 interface Questions {
@@ -24,27 +23,32 @@ interface QuizData {
   questions: Questions[];
 }
 
+interface AjaxResponse {
+  data: any;
+  status: number;
+  message: string;
+}
+
 const Game = (): JSX.Element => {
   const { category } = useParams();
-
   const [quizData, setQuizData] = useState<QuizData | null>(null);
 
   useEffect(() => {
-    async function fetchData() {
-      // const response = await fetch("/quizData.json");
-      // //const data = await response.json();
+    const fetchData = () => {
+      return $.ajax({
+        url: "/questions/quizData.json",
+      });
+    };
+
+    const getData = async () => {
+      const response = await fetchData();
+      const data = response.questions;
       
-      // console.log(response.parse());
-      // //setQuizData(data);
-   
-      $.ajax({
-          url:"/questions/quizData.json",
-          success: (data:Questions[])=>{
-              console.log(data);
-          }
-      })
-    }
-    fetchData();
+      setQuizData(data);
+    };
+    
+    
+    getData();
   }, []);
 
   const handleButtonClick = (): void => {
@@ -68,6 +72,7 @@ const Game = (): JSX.Element => {
           category
         </h5>
         <br />
+
         <section className="game-area d-flex jusify-content-center flex-column my-2     ">
           <QuestionLengthTracker currentQuestion={1} totalQuestionLength={25} />
           <Question question="do you love me ? " />
