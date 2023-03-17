@@ -9,7 +9,7 @@ const Answer = ({text}: answerProps):JSX.Element =>{
     return (
         <React.Fragment>
         
-            <section className="answer-container d-flex align-items-center justify-content-center shadow">
+            <section className="answer-container d-flex align-items-center justify-content-center shadow mx-4 my-3">
                 <section className="answer-container-inner-section d-flex align-items-center justify-content-center shadow">
                     
                    <h6 className="answer-text fw-bold fs-6 text-capitalize m-0">{text}</h6>
