@@ -1,4 +1,4 @@
-import React from "react";
+import React,{MouseEvent} from "react";
 import { useParams } from "react-router-dom";
 import Footer from "../components/app-footer";
 import CurrentPageNotch from "../components/app-current-page-notch";
@@ -13,8 +13,8 @@ const Game = (): JSX.Element => {
   const handleButtonClick = (): void => {
     console.log("You clicked me");
   };
-  const handleAnswerClick = (event: Event) => {
-    console.log(event);
+  const handleAnswerClick = (event: MouseEvent<HTMLDivElement>) => {
+       console.log(event.currentTarget.textContent);
   };
   return (
     <React.Fragment>
@@ -35,10 +35,10 @@ const Game = (): JSX.Element => {
           <Question question="do you love me ? " />
           <section className="container d-flex align-items-center justify-content-center">
             <section className="answer-area row">
-              <Answer text="false" />
-              <Answer text="true" />
-              <Answer text="no" />
-              <Answer text="yes" />
+              <Answer text="false" onClick={(event:MouseEvent<HTMLDivElement>)=>handleAnswerClick(event)} />
+              <Answer text="true"  onClick={(event:MouseEvent<HTMLDivElement>)=>handleAnswerClick(event)}/>
+              <Answer text="no"  onClick={(event:MouseEvent<HTMLDivElement>)=>handleAnswerClick(event)}/>
+              <Answer text="yes"  onClick={(event:MouseEvent<HTMLDivElement>)=>handleAnswerClick(event)}/>
             </section>
           </section>
 

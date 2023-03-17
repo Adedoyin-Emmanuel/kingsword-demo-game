@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, MouseEvent } from "react";
 import CategorySelection from "../components/category-selection";
 import FooterSlider from "../components/footer-slider";
 import db from "../backend/db";
@@ -10,12 +10,11 @@ const Category = (): JSX.Element => {
   const [elementToInsert, setElementToInsert] = useState<JSX.Element>(
     <React.Fragment></React.Fragment>
   );
-  
+
   const navigateTo = useNavigate();
 
-  const testClick = (event:any) => {
-    //console.log(event.target.id);
-    navigateTo(`/app/category/${event.target.id.trim()}`);
+  const testClick = (event: MouseEvent<HTMLDivElement>) => {
+    navigateTo(`/app/category/${event.currentTarget.id}`);
   };
 
   useMemo(() => {
@@ -23,11 +22,26 @@ const Category = (): JSX.Element => {
       return (
         <section className="footer-slider-body d-flex align-items-center justify-content-center">
           <section className="game-categories my-5 d-flex align-items-center justify-content-around flex-wrap">
-            <CategorySelection categoryText="love revs" onClick={(event:any)=>testClick(event)} id={"love"} />
-            <CategorySelection categoryText="marriage" onClick={(event:any)=>testClick(event)} id={"marriage"}/>
-            <CategorySelection categoryText="blessing" onClick={(event:any)=>testClick(event)} id={"blessing"}/>
-            <CategorySelection categoryText="faith" onClick={(event:any)=>testClick(event)} id={"faith"}/>
-            
+            <CategorySelection
+              categoryText="love revs"
+              onClick={(event: MouseEvent<HTMLDivElement>) => testClick(event)}
+              id={"love"}
+            />
+            <CategorySelection
+              categoryText="marriage"
+              onClick={(event: MouseEvent<HTMLDivElement>) => testClick(event)}
+              id={"marriage"}
+            />
+            <CategorySelection
+              categoryText="blessing"
+              onClick={(event: MouseEvent<HTMLDivElement>) => testClick(event)}
+              id={"blessing"}
+            />
+            <CategorySelection
+              categoryText="faith"
+              onClick={(event: MouseEvent<HTMLDivElement>) => testClick(event)}
+              id={"faith"}
+            />
           </section>
         </section>
       );

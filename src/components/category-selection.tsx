@@ -1,10 +1,10 @@
-import React from 'react'
+import React, {MouseEvent} from 'react'
 
 interface categorySelectionProp
 {
     categoryText: string;
     id:string;
-    onClick: (event:any) => void;
+    onClick: (event:MouseEvent<HTMLDivElement>) => void;
     
 }
 const CategorySelection = ({categoryText, id, onClick}: categorySelectionProp):JSX.Element => {
