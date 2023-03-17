@@ -1,5 +1,3 @@
-
-
 const navigateToPage = (page:string) =>{
     window.location.href=`${page}`
 }
