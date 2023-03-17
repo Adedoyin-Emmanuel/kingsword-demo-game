@@ -32,7 +32,7 @@
     --brand-small-text:   0.9rem;
     --brand-small-text-2: 0.8rem;
     --brand-small-text-3: 0.78rem;   
-    --brand-button-border-radius:20px;
+    --brand-button-border-radius:30px;
 }
 
 /*application font size styles*/
@@ -135,7 +135,14 @@
 	padding:10px;
 	width:60%;
 	cursor: pointer;
+    transition: .5s;
+    color:#000;
+}
 
+.brand-button:hover{
+    background:var(--brand-category-love-color);
+    border:none;
+    color:var(--brand-white-color);
 }
 
 
