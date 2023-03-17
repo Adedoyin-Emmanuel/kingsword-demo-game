@@ -33,6 +33,7 @@
     --brand-small-text-2: 0.8rem;
     --brand-small-text-3: 0.78rem;   
     --brand-button-border-radius:30px;
+    --brand-footer-slider-border-radius:30px;
 }
 
 /*application font size styles*/
@@ -94,6 +95,28 @@
     margin-top: 5px;
     background:var(--brand-category-love-color-2);
     outline:2px solid var(--brand-white-color);
+}
+
+
+
+.footer-slider
+{
+    position: fixed;
+    bottom:0;
+    background:var(--brand-category-love-color);
+    height:60%;
+    z-index:1000000;
+    border-top-right-radius: var(--brand-footer-slider-border-radius);
+    border-top-left-radius: var(--brand-button-border-radius);
+}
+
+
+.footer-slider-notch
+{
+    width:40px;
+    background:var(--brand-white-color);
+    height:5px;
+    border-radius:50px;
 }
 
 

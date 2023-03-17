@@ -1,21 +1,16 @@
 import React from "react";
 
-interface FooterSliderProps
-{
-   elementToInsert?: JSX.Element;
+interface FooterSliderProps {
+  childComponent: JSX.Element;
 }
-const FooterSlider = ({elementToInsert}: FooterSliderProps): JSX.Element => {
+const FooterSlider = ({ childComponent }: FooterSliderProps): JSX.Element => {
   return (
     <React.Fragment>
-      <section className="footer-slider">
-        <section className="footer-slider-close-button"></section>
-        <section className="footer-slider-body"></section>
-        
+      <section className="footer-slider d-flex  justify-content-center w-100">
+        {childComponent}
       </section>
     </React.Fragment>
   );
 };
-
-
 
 export default FooterSlider;
