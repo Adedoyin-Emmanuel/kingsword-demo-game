@@ -42,10 +42,10 @@ const Game = (): JSX.Element => {
             </section>
           </section>
 
-          <section className="button-container d-flex align-items-center justify-content-center my-md-4">
+          <section className="button-container d-flex align-items-center justify-content-center ">
             <Button
               text="next question"
-              className="brand-button width-toggle-4 fw-bold my-md-4"
+              className="brand-button width-toggle-4 fw-bold my-md-4 my-3"
               onClick={handleButtonClick}
             />
           </section>
