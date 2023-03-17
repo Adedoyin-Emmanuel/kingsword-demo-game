@@ -4,6 +4,7 @@ import NotFound from "./pages/404";
 import Result from "./pages/Result";
 import Category from "./pages/Category";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./autoload";
 
 const App = (): JSX.Element => {
   return (
