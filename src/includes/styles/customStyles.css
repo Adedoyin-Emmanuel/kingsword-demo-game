@@ -32,7 +32,7 @@
     --brand-small-text:   0.9rem;
     --brand-small-text-2: 0.8rem;
     --brand-small-text-3: 0.78rem;   
-    --brand-button-border-radius: 15px;
+    --brand-button-border-radius:20px;
 }
 
 /*application font size styles*/
@@ -129,9 +129,9 @@
 .brand-button{
 	border-radius: var(--brand-button-border-radius);
 	outline: none;
-	border: 0;
+	border: 3px solid var(--brand-category-love-color);
 	text-transform: capitalize;
-	background: var(--brand-category-love-color);
+	background: var(--brand-white-color);
 	padding:10px;
 	width:60%;
 	cursor: pointer;

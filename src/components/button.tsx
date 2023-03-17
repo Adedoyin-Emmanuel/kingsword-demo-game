@@ -9,7 +9,7 @@ interface ButtonProps
 const Button = ({className, text, onClick}: ButtonProps): JSX.Element => {
     return (
         <React.Fragment>
-            <button className={`${className}`} onClick={onClick}>
+            <button className={`${className} shadow`} onClick={onClick}>
                 {text}
             </button>
         </React.Fragment>

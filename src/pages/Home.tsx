@@ -27,7 +27,7 @@ const Home = (): JSX.Element => {
           <section className="button-container d-flex align-items-center justify-content-center my-4">
             <Button
               text="start game!"
-              className="fw-bold brand-button width-toggle-6 text-light my-2"
+              className="fw-bold brand-button width-toggle-6 my-2"
               onClick={handleButtonClick}
             ></Button>
           </section>
