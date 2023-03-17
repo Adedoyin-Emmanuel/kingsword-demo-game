@@ -25,11 +25,15 @@
 ::root
 {
     --brand-primary-color:lightskyblue;
+    --brand-secondary-color:rgb(103, 192, 248);
+    --brand-white-color:#fff;
+    --brand-category-love-color:rgb(245, 84, 84);
     --brand-small-text:.9rem;
     --brand-small-text-2: .8rem;
     --brand-small-text-3: .78rem;    
 }
 
+/*application font size styles*/
 
 .brand-small-text
 {
@@ -48,3 +52,19 @@
     font-size:var(--brand-small-text-3);
 }
 
+/*application background colors*/
+
+.brand-primary-color
+{
+    background:var(--brand-primary-color);
+}
+
+.brand-white-color
+{
+    background:var(--brand-white-color);
+}
+
+.brand-category-love-color
+{
+    background:var(--brand-category-love-color);
+}
