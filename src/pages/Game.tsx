@@ -1,4 +1,4 @@
-import React,{MouseEvent} from "react";
+import React,{MouseEvent, useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
 import Footer from "../components/app-footer";
 import CurrentPageNotch from "../components/app-current-page-notch";
@@ -6,6 +6,24 @@ import Question from "../components/question";
 import Answer from "../components/answer";
 import QuestionLengthTracker from "../components/question-legth-tracker";
 import Button from "../components/button";
+
+/*question interface*/
+
+interface Questions
+{
+    id: number,
+    question: string,
+    category: string,
+    options: string[],
+    correctAnswer: number
+}
+
+
+/*Quiz data*/
+interface QuizData
+{
+  questions: Questions[],
+}
 
 const Game = (): JSX.Element => {
   const { category } = useParams();
@@ -16,6 +34,7 @@ const Game = (): JSX.Element => {
   const handleAnswerClick = (event: MouseEvent<HTMLDivElement>) => {
        console.log(event.currentTarget.textContent);
   };
+  
   return (
     <React.Fragment>
       <section className="container-fluid p-0">
