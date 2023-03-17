@@ -186,10 +186,15 @@
     height:60px;
     border-radius: 50% !important;
     background: var(--brand-category-love-color-3);
-    outline:5px solid var(--brand-white-color);
+    outline:4px solid var(--brand-white-color);
     transition: .7s;
     cursor: pointer;
    
+   
+}
+
+.category-selection > img{
+    object-fit: cover;
 }
 
 .category-selection:hover

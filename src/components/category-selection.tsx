@@ -13,11 +13,11 @@ const CategorySelection = ({categoryText, id, onClick, categoryImageSource}: cat
     
         <React.Fragment>
             <section className="d-flex align-items-center justify-content-center flex-column col-6 col-md-3" >
-            <section className="category-selection mx-3" onClick={onClick} id={id}>
+            <section className="category-selection mx-3 d-flex align-items-center justify-content-center" onClick={onClick} id={id}>
                 <img src={categoryImageSource} className="img-fluid" alt={"category images"}/>
             </section>
             
-            <p className="category-name text-capitalize brand-small-text py-2 text-center">{categoryText}</p>
+            <p className="category-name text-capitalize brand-small-text-2 py-2 text-center">{categoryText}</p>
             
             </section>
         </React.Fragment>
