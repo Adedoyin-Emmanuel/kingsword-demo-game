@@ -3,6 +3,10 @@ import CategorySelection from "../components/category-selection";
 import FooterSlider from "../components/footer-slider";
 import db from "../backend/db";
 import { useNavigate } from "react-router-dom";
+import LoveImage from "./../assets/images/love.svg";
+import CoupleImage from "./../assets/images/love-2.svg";
+import FamilyImage from "./../assets/images/parenting.svg";
+import GiftImage from "./../assets/images/family1.svg";
 
 const Category = (): JSX.Element => {
   const userName = db.get("KINGSWORD_GAME_USERNAME") || "user";
