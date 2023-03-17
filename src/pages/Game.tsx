@@ -4,7 +4,7 @@ import Footer from "../components/app-footer";
 import CurrentPageNotch from "../components/app-current-page-notch";
 import Question from "../components/question";
 import Answer from "../components/answer";
-
+import QuestionLengthTracker from "../components/question-legth-tracker";
 const Game = (): JSX.Element => {
   const { category } = useParams();
 
