@@ -2,17 +2,17 @@ import React from 'react'
 
 interface answerProps
 {
-    answer:string,
+    text:string,
     
 }
-const Answer = ({answer}: answerProps):JSX.Element =>{
+const Answer = ({text}: answerProps):JSX.Element =>{
     return (
         <React.Fragment>
         
             <section className="answer-container">
                 <section className="answer-container-inner-section">
                     
-                    {answer}
+                   <p className="answer-text">{text}</p>
                     
                 </section>
             </section>
