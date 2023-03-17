@@ -1,4 +1,5 @@
 import React from "react";
+import CurrentPageNotch from '../components/app-current-page-notch';
 import Footer from "../components/app-footer";
 
 const Home = (): JSX.Element => {
@@ -6,7 +7,7 @@ const Home = (): JSX.Element => {
     <React.Fragment>
       <section className="container-fluid p-0">
         <h1>welcome home!</h1>
-        <Footer/>
+        <Footer homePage={<CurrentPageNotch/>} />
       </section>
     </React.Fragment>
   );

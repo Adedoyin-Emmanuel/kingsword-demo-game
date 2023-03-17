@@ -28,6 +28,7 @@
     --brand-secondary-color:rgb(103, 192, 248);
     --brand-white-color:#fff;
     --brand-category-love-color:rgb(248, 79, 79);
+    --brand-category-love-color-2:rgb(211, 105, 105);
     --brand-small-text:   0.9rem;
     --brand-small-text-2: 0.8rem;
     --brand-small-text-3: 0.78rem;    
@@ -69,7 +70,10 @@
     background:var(--brand-category-love-color);
 }
 
-
+.brand-category-love-color-2
+{
+    background:var(--brand-category-love-color-2);
+}
 /*application footer styling*/
 .app-footer
 {   
@@ -81,9 +85,10 @@
 
 .current-page-notch
 {
-    width:5px;
+    width:3px;
     height:5px;
     border-radius:50% !important;
     margin-top: 5px;
-    background:var(--brand-white-color);
+    background:var(--brand-category-love-color-2);
+    outline:2px solid var(--brand-white-color);
 }
