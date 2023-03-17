@@ -8,6 +8,7 @@ import QuestionLengthTracker from "../components/question-legth-tracker";
 import Button from "../components/button";
 import $ from "jquery";
 
+
 /*question interface*/
 
 interface Questions {
@@ -35,9 +36,9 @@ const Game = (): JSX.Element => {
       
       // console.log(response.parse());
       // //setQuizData(data);
-      
+   
       $.ajax({
-          url:"./quizData.json",
+          url:"/questions/quizData.json",
           success: (data:Questions[])=>{
               console.log(data);
           }
