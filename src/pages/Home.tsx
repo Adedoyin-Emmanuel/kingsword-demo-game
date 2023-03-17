@@ -4,30 +4,45 @@ import Footer from "../components/app-footer";
 import Swal from "sweetalert2";
 import ChurchImage from "./../assets/images/family7.svg";
 import Button from "../components/button";
+import db from "../backend/db";
 
 const Home = (): JSX.Element => {
   const handleButtonClick = (): void => {
-      Swal.fire({
-        title:`<h3 class="fw-bold">Enter your name</h4>`,
-        input:"text",
-        confirmButtonColor:"rgb(248, 79, 79)",
-        allowOutsideClick: false,
-        allowEnterKey:true,
-        allowEscapeKey:false,
-        showCancelButton:false,
-        inputAttributes: {
-          style: 'font-size:var(--brand-small-text)'
-        },
-        customClass: {
-          popup: 'z-index-class',
-          confirmButton: 'swal-confirm-button',
-        },
-      }).then((willProceed)=>{
-          if(willProceed.isConfirmed)
-          {
-            alert(willProceed.value);
-          }
-      }); 
+    Swal.fire({
+      title: `<h3 class="fw-bold">Enter your name</h4>`,
+      input: "text",
+      confirmButtonColor: "rgb(248, 79, 79)",
+      allowOutsideClick: false,
+      allowEnterKey: true,
+      allowEscapeKey: false,
+      showCancelButton: false,
+      inputAttributes: {
+        style: "font-size:var(--brand-small-text)",
+      },
+      customClass: {
+        popup: "z-index-class",
+        confirmButton: "swal-confirm-button",
+      },
+    }).then((willProceed) => {
+      if (willProceed.isConfirmed) {
+        const $legit_value = willProceed.value.trim();
+        if ($legit_value === undefined || $legit_value == "")
+        {
+          Swal.fire({
+            title: `<h3 class="fw-bold">Invalid Input!</h4>`,
+            html: "<p class=' text-center text-danger brand-small-text'>*Please enter your name*</p>",
+            confirmButtonColor:  "rgb(248, 79, 79)",
+            allowOutsideClick: false,
+            allowEscapeKey: false,
+            allowEnterKey: false,
+            timer: 4000,
+          });
+          
+        }
+      } else {
+        window.location.reload();
+      }
+    });
   };
   return (
     <React.Fragment>
@@ -38,10 +53,15 @@ const Home = (): JSX.Element => {
           </h3>
         </section>
         <p className="text-capitalize px-3 my-0">welcome to kingsword game!</p>
-        
+
         <section className="main-app-container d-flex justify-content-center flex-column">
           <section className="image-section d-flex align-items-center justify-content-center">
-            <img src={ChurchImage} className="m-auto" width={"450"} height={"300"} />
+            <img
+              src={ChurchImage}
+              className="m-auto"
+              width={"450"}
+              height={"300"}
+            />
           </section>
 
           <section className="button-container d-flex align-items-center justify-content-center my-4">
