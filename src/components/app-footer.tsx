@@ -14,6 +14,8 @@ const Footer = ({
   recentPage,
  
 }: footerActivePageNotch): JSX.Element => {
+
+
   return (
     <React.Fragment>
       <section className="app-footer d-flex align-items-center justify-content-between brand-category-love-color p-2">
