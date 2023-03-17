@@ -29,6 +29,7 @@
     --brand-white-color:#fff;
     --brand-category-love-color:rgb(248, 79, 79);
     --brand-category-love-color-2:rgb(211, 105, 105);
+    --brand-category-love-color-3:rgb(249, 105, 105);
     --brand-small-text:   0.9rem;
     --brand-small-text-2: 0.8rem;
     --brand-small-text-3: 0.78rem;   
@@ -177,7 +178,16 @@
 }
 
 
+/*category-selection stylying*/
 
+.category-selection
+{
+    width:80px;
+    height:80px;
+    border-radius: 50% !important;
+    background: var(--brand-category-love-color-3);
+    outline:5px solid var(--brand-white-color);
+}
 
 
 

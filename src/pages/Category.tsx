@@ -1,6 +1,5 @@
 import React, { useState, useMemo } from "react";
-import CurrentPageNotch from "../components/app-current-page-notch";
-import Button from "../components/button";
+import CategorySelection from "../components/category-selection";
 import FooterSlider from "../components/footer-slider";
 import db from "../backend/db";
 
@@ -11,15 +10,23 @@ const Category = (): JSX.Element => {
     <React.Fragment></React.Fragment>
   );
 
+  const testClick = () => {
+    alert("you clicked me!");
+  };
+
   useMemo(() => {
-    const element = ():JSX.Element =>{
+    const element = (): JSX.Element => {
       return (
-        <section className="footer-slider-body">
-          <section className="footer-slider-notch my-2"></section>
-        
+        <section className="footer-slider-body d-flex align-items-center justify-content-center">
+          <section className="game-categories my-5 d-flex align-items-center justify-content-around flex-wrap">
+            <CategorySelection categoryText="love refs" onClick={testClick} />
+            <CategorySelection categoryText="marriage" onClick={testClick} />
+            <CategorySelection categoryText="blessing" onClick={testClick} />
+            <CategorySelection categoryText="favour" onClick={testClick} />
+          </section>
         </section>
       );
-    }
+    };
     setElementToInsert(element);
   }, []);
 

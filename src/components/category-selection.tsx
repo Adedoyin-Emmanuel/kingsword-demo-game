@@ -9,8 +9,13 @@ const CategorySelection = ({categoryText, onClick}: categorySelectionProp):JSX.E
     return (
     
         <React.Fragment>
-            <section className="category-secection" onClick={onClick}>
-                {categoryText}  
+            <section className="d-flex align-items-center justify-content-center flex-column">
+            <section className="category-selection mx-3" onClick={onClick}>
+                 
+            </section>
+            
+            <p className="category-name text-capitalize brand-small-text py-2 text-center">{categoryText}</p>
+            
             </section>
         </React.Fragment>
     )
