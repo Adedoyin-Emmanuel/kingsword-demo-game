@@ -1,7 +1,6 @@
 import React, { MouseEvent, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Footer from "../components/app-footer";
-import CurrentPageNotch from "../components/app-current-page-notch";
+
 import Question from "../components/question";
 import Answer from "../components/answer";
 import QuestionLengthTracker from "../components/question-legth-tracker";
@@ -106,7 +105,7 @@ const Game = (): JSX.Element => {
         </h5>
         <br />
 
-        <section className="game-area d-flex jusify-content-center flex-column my-2     ">
+        <section className="game-area d-flex jusify-content-center flex-column my-2 ">
           <QuestionLengthTracker
             currentQuestion={1}
             totalQuestionLength={parseInt(
@@ -152,7 +151,6 @@ const Game = (): JSX.Element => {
           </section>
         </section>
 
-        <Footer categoryPage={<CurrentPageNotch />} />
       </section>
     </React.Fragment>
   );

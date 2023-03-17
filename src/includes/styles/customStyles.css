@@ -148,6 +148,12 @@
 	
 }
 
+.game-area 
+{
+    height:100vh;
+    width:100%;
+}
+
 .z-index-class
 {
     z-index:100000;
@@ -223,6 +229,7 @@
     background:var(--brand-category-love-color);
     border:5px solid var(--brand-category-love-color-3);
     color:var(--brand-white-color);
+    transform:scale(1.1);
 }
 
 
