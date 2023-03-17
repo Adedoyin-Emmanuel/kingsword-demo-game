@@ -17,7 +17,9 @@ const Home = (): JSX.Element => {
       allowEscapeKey: false,
       showCancelButton: false,
       inputAttributes: {
+        autocapitalize: "on",
         style: "font-size:var(--brand-small-text)",
+       
       },
       customClass: {
         popup: "z-index-class",
