@@ -207,6 +207,18 @@
     height:80px;
     border-radius:50% !important;
     background: var(--brand-category-love-color);
+    cursor:pointer;
+    transition:.5s;
+    
+}
+
+.answer-container:hover{
+    transform: scale(1.1);
+}
+
+.answer-container:hover > .answer-container-inner-section{
+   background:var(--brand-category-love-color);
+   color:var(--brand-white-color)
     
 }
 .answer-container-inner-section
@@ -215,6 +227,7 @@
     width:65px;
     height:65px;
     border-radius: 50% !important;
+    transition: .5s;
 }
 
 /*custom responsiveness*/
