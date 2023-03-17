@@ -12,7 +12,7 @@ export const navigateToHome = ():void =>
 
 export const navigateToCategory = ():void =>
 {
-    navigateToPage("app/category");
+    navigateToPage("/app/category");
 }
 
 export const navigateToResult = ():void =>{
