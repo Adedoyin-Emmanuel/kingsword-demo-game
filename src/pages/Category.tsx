@@ -11,7 +11,7 @@ const Category = (): JSX.Element => {
   );
 
   const testClick = () => {
-    alert("you clicked me!");
+    console.log("hello world");
   };
 
   useMemo(() => {
