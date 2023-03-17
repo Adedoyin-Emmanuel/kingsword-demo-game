@@ -13,7 +13,9 @@ const Game = (): JSX.Element => {
   const handleButtonClick = ():void =>{
     console.log("You clicked me");
   }
-
+  const handleAnswerClick = (event:Event) =>{
+        console.log(event);
+  }
   return (
     <React.Fragment>
       <section className="container-fluid p-0">

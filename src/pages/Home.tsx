@@ -10,7 +10,7 @@ import db from "../backend/db";
 const Home = (): JSX.Element => {
   const navigateTo = useNavigate();
   const handleButtonClick = (): void => {
-    if (db.get("KINGSWORD_GAME_USERNAME")) {
+    if (db.get("KINGSWORD_GAME_USERNAME") !== "undefined")  {
       navigateTo("/app/category");
     } else {
       Swal.fire({
