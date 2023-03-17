@@ -9,13 +9,13 @@ import Button from "../components/button";
 
 const Game = (): JSX.Element => {
   const { category } = useParams();
-  
-  const handleButtonClick = ():void =>{
+
+  const handleButtonClick = (): void => {
     console.log("You clicked me");
-  }
-  const handleAnswerClick = (event:Event) =>{
-        console.log(event);
-  }
+  };
+  const handleAnswerClick = (event: Event) => {
+    console.log(event);
+  };
   return (
     <React.Fragment>
       <section className="container-fluid p-0">
@@ -29,19 +29,25 @@ const Game = (): JSX.Element => {
           </p>{" "}
           category
         </h5>
-        <br/>
+        <br />
         <section className="game-area d-flex jusify-content-center flex-column my-2     ">
           <QuestionLengthTracker currentQuestion={1} totalQuestionLength={25} />
           <Question question="do you love me ? " />
-          <section className="answer-area d-flex align-items-around justify-content-center flex-wrap p-4">
-            <Answer text="false" />
-            <Answer text="true" />
-            <Answer text="no" />
-            <Answer text="yes" />
+          <section className="container d-flex align-items-center justify-content-center">
+            <section className="answer-area row">
+              <Answer text="false" />
+              <Answer text="true" />
+              <Answer text="no" />
+              <Answer text="yes" />
+            </section>
           </section>
-          
+
           <section className="button-container d-flex align-items-center justify-content-center">
-            <Button text="next question" className="brand-button fw-bold" onClick={handleButtonClick}/>
+            <Button
+              text="next question"
+              className="brand-button fw-bold"
+              onClick={handleButtonClick}
+            />
           </section>
         </section>
 
