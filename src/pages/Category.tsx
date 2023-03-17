@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import LoveImage from "./../assets/images/love.svg";
 import CoupleImage from "./../assets/images/love-2.svg";
 import FamilyImage from "./../assets/images/parenting.svg";
-import GiftImage from "./../assets/images/family1.svg";
+import GiftImage from "./../assets/images/gift.svg";
 
 const Category = (): JSX.Element => {
   const userName = db.get("KINGSWORD_GAME_USERNAME") || "user";
@@ -29,22 +29,26 @@ const Category = (): JSX.Element => {
             <CategorySelection
               categoryText="love revs"
               onClick={(event: MouseEvent<HTMLDivElement>) => testClick(event)}
+              categoryImageSource={LoveImage}
               id={"love"}
             />
             <CategorySelection
               categoryText="marriage"
               onClick={(event: MouseEvent<HTMLDivElement>) => testClick(event)}
+              categoryImageSource={CoupleImage}
               id={"marriage"}
             />
             <CategorySelection
-              categoryText="blessing"
+              categoryText="Benevolence"
               onClick={(event: MouseEvent<HTMLDivElement>) => testClick(event)}
-              id={"blessing"}
+              categoryImageSource={GiftImage}
+              id={"Benevolence"}
             />
             <CategorySelection
-              categoryText="faith"
+              categoryText="Parenting"
               onClick={(event: MouseEvent<HTMLDivElement>) => testClick(event)}
-              id={"faith"}
+              categoryImageSource={FamilyImage}
+              id={"Parenting"}
             />
           </section>
         </section>
