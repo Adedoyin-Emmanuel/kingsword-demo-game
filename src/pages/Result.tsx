@@ -7,8 +7,8 @@ const Result = (): JSX.Element => {
   return (
     <React.Fragment>
       <section className="container-fluid p-0">
-        <h1>you failed!</h1>
-        
+        <section className="test-result">
+        </section>
         <Footer resultPage={<CurrentPageNotch/>}/>
       </section>
     </React.Fragment>
