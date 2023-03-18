@@ -6,12 +6,12 @@ import {navigateToHome, navigateToCategory, navigateToResult} from "./../include
 interface footerActivePageNotch {
   homePage?: JSX.Element;
   categoryPage?: JSX.Element;
-  recentPage?: JSX.Element;
+  resultPage?: JSX.Element;
 }
 const Footer = ({
   homePage,
   categoryPage,
-  recentPage,
+  resultPage,
  
 }: footerActivePageNotch): JSX.Element => {
 
@@ -50,7 +50,7 @@ const Footer = ({
             width={"18"}
             className="fw-bold"
           />
-          {recentPage != undefined && recentPage}
+          {resultPage != undefined && resultPage}
         </section>
       </section>
     </React.Fragment>

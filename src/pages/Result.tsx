@@ -9,7 +9,7 @@ const Result = (): JSX.Element => {
       <section className="container-fluid p-0">
         <h1>you failed!</h1>
         
-        <Footer recentPage={<CurrentPageNotch/>}/>
+        <Footer resultPage={<CurrentPageNotch/>}/>
       </section>
     </React.Fragment>
   );
