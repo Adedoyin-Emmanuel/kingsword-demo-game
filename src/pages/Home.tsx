@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import CurrentPageNotch from "../components/app-current-page-notch";
 import Footer from "../components/app-footer";
 import Swal from "sweetalert2";
-import ChurchImage from "./../assets/images/family7.svg";
+import ChurchImage from "./../assets/images/family7.png";
 import Button from "../components/button";
 import db from "../backend/db";
 import { configPath } from "../includes/scripts/particle-js-config";
