@@ -49,7 +49,7 @@ const Game = (): JSX.Element => {
       const timer = setTimeout(() => {
         setShowConfetti(false);
 
-        navigateTo(`/app/result/${category}}`);
+        navigateTo(`/app/result/${category}`);
       }, 7000);
       return () => clearTimeout(timer);
     }
