@@ -6,6 +6,8 @@ import Swal from "sweetalert2";
 import ChurchImage from "./../assets/images/family7.svg";
 import Button from "../components/button";
 import db from "../backend/db";
+import particlesJS from 'particles.js';
+
 
 const Home = (): JSX.Element => {
   const navigateTo = useNavigate();

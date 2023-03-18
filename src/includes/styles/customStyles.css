@@ -194,7 +194,7 @@
     outline:4px solid var(--brand-white-color);
     transition: .7s;
     cursor: pointer;
-   
+    user-select: none;
    
 }
 
@@ -221,6 +221,7 @@
     border:5px solid var(--brand-category-love-color);
     transition: .7s;
     cursor:pointer;
+    user-select: none;
 }
 
 .answer-container-inner-section:hover
