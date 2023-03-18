@@ -37,7 +37,6 @@ const Game = (): JSX.Element => {
   const [answerSelected, setAnswerSelected] = useState<boolean>(false);
   const [currentAnswerSelected, setCurrentAnswerSelected] =
     useState<string>(" ");
-  const [correctAnswer, setCorrectAnswer] = useState<number>(0);
 
   useEffect(() => {
     const fetchData = () => {
@@ -50,7 +49,7 @@ const Game = (): JSX.Element => {
       const response = await fetchData();
       const returnedData = response.questions;
       db.create("KINGSWORD_GAME_TOTAL_QUESTIONS", returnedData.length);
-
+      db.create("KINGSWORD_GAME_SCORE", "0");
       setDataToUser(
         returnedData.map((data: Questions, dataIndex: number) => {
           return data;
@@ -72,6 +71,10 @@ const Game = (): JSX.Element => {
 
   let questionIncrement = 0;
   const [counter, setCounter] = useState<number>(0);
+  const [correctAnswer, setCorrectAnswer] = useState<number>(() =>
+    parseInt(db.get("KINGSWORD_GAME_SCORE"))
+  );
+
   var questions;
 
   if (dataToUser) {
@@ -80,7 +83,7 @@ const Game = (): JSX.Element => {
 
   const handleButtonClick = (): void => {
     //check if answer matches
-    console.log(currentAnswerSelected);
+    //console.log(currentAnswerSelected);
 
     //
     if (currentAnswerSelected == " ") {
@@ -95,20 +98,33 @@ const Game = (): JSX.Element => {
         return;
       });
     } else {
-      setButtonClick(true);
-      setCounter(counter + 1);
-
+      //console.log(db.get("KINGSWORD_GAME_SCORE"));
       for (let i = 0; i < questions.options.length; i++) {
-        if (questions.options[i] == currentAnswerSelected) {
-          setCorrectAnswer(correctAnswer + 1);
+        if (
+          currentAnswerSelected == questions.options[questions.correctAnswer].toLowerCase().trim()
+        ) {
+          console.log("correct");
+          
+          //console.log(correctAnswer);
+
+          break;
+        } else {
+      
+          console.log("incorrect");
+          break;
         }
       }
+
+      //console.log(db.get("KINGSWORD_GAME_SCORE"));
+      setButtonClick(true);
+      setCounter(counter + 1);
     }
   };
   const handleAnswerClick = (event: MouseEvent<HTMLDivElement>) => {
-    console.log(event.currentTarget.textContent);
     setAnswerSelected(true);
-    setCurrentAnswerSelected(event.currentTarget.textContent);
+    setCurrentAnswerSelected(
+      event.currentTarget.textContent.toLowerCase().trim()
+    );
   };
 
   return (
