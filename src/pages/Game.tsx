@@ -7,7 +7,7 @@ import QuestionLengthTracker from "../components/question-legth-tracker";
 import Button from "../components/button";
 import $ from "jquery";
 import db from "../backend/db";
-
+import Confetti from "react-confetti";
 /*question interface*/
 
 interface Questions {
@@ -36,8 +36,22 @@ const Game = (): JSX.Element => {
   const [buttonClick, setButtonClick] = useState<boolean>(false);
   const [answerSelected, setAnswerSelected] = useState<boolean>(false);
   const [legitAnswer, setLegitAnswer] = useState<number>(0);
+  const [showConfetti, setShowConfetti] = useState<boolean>(false);
+
   const [currentAnswerSelected, setCurrentAnswerSelected] =
     useState<string>(" ");
+
+  // useEffect hook to trigger confetti when showConfetti is true
+  useEffect(() => {
+    if (showConfetti) {
+      const timer = setTimeout(() => {
+        setShowConfetti(false);
+        window.location.reload();
+        
+      }, 7000);
+      return () => clearTimeout(timer);
+    }
+  }, [showConfetti]);
 
   useEffect(() => {
     const fetchData = () => {
@@ -86,36 +100,26 @@ const Game = (): JSX.Element => {
         return;
       });
     } else {
-    
       for (let i = 0; i < questions.options.length; i++) {
         if (
           currentAnswerSelected ==
           questions.options[questions.correctAnswer].toLowerCase().trim()
         ) {
           console.log("correct");
-          db.update("KINGSWORD_GAME_SCORE",`${legitAnswer + 1}`);
-          setLegitAnswer(()=>legitAnswer + 1);
+          db.update("KINGSWORD_GAME_SCORE", `${legitAnswer + 1}`);
+          setLegitAnswer(() => legitAnswer + 1);
           setCurrentAnswerSelected(" ");
           break;
         } else {
           console.log("incorrect");
           setCurrentAnswerSelected(" ");
-          
+
           break;
         }
       }
 
       if (counter + 1 == parseInt(db.get("KINGSWORD_GAME_TOTAL_QUESTIONS"))) {
-       
-        Swal.fire({
-          toast: true,
-          text: "Game over you scored" + parseInt(db.get("KINGSWORD_GAME_SCORE")),
-          icon: "success",
-          position: "top",
-          showConfirmButton: false,
-        }).then((willProceed) => {
-          window.location.reload();
-        });
+        setShowConfetti(true);
       } else {
         setButtonClick(true);
         setCounter(counter + 1);
@@ -127,11 +131,14 @@ const Game = (): JSX.Element => {
     setCurrentAnswerSelected(
       event.currentTarget.textContent.toLowerCase().trim()
     );
+    
+    //setShowConfetti(true);
   };
 
   return (
     <React.Fragment>
       <section className="container-fluid p-0" style={{ overflowX: "hidden" }}>
+          {(showConfetti) &&   <Confetti />}
         <h5 className="fs-5 fw-bold my-3 p-2 text-capitalize">
           {" "}
           <p
