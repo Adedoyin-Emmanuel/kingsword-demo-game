@@ -13,7 +13,7 @@ const NotFound = (): JSX.Element => {
           </h2>
         </section>
         <section className="image-container d-flex align-items-center justify-content-center">
-          <img src={NotFoundImage} alt="lost image" className="img-fluid"  width={"300"} height={"300"}/>
+          <img src={NotFoundImage} alt="lost image" className="img-fluid"  width={"250"} height={"250"}/>
         </section>
         <Button
           text="Go Home"
