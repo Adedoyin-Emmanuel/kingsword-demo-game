@@ -105,6 +105,7 @@
     bottom:0;
     background:var(--brand-category-love-color);
     height:60%;
+    width:100%;
     z-index:1000000;
     border-top-right-radius: var(--brand-footer-slider-border-radius);
     border-top-left-radius: var(--brand-button-border-radius);
@@ -200,8 +201,8 @@
 
 .category-selection
 {
-    width:60px;
-    height:60px;
+    width:82px;
+    height:82px;
     border-radius: 50% !important;
     background: var(--brand-category-love-color-3);
     outline:4px solid var(--brand-white-color);
@@ -251,6 +252,8 @@
 	.width-toggle {
 		width: 35%;
 	}
+	
+	
 	.width-toggle-2 {
 		width: 75%;
 		
