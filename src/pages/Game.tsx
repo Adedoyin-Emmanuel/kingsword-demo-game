@@ -35,7 +35,7 @@ const Game = (): JSX.Element => {
   const [dataToUser, setDataToUser] = useState();
   const [buttonClick, setButtonClick] = useState<boolean>(false);
   const [answerSelected, setAnswerSelected] = useState<boolean>(false);
-  const [correctAnswer, setCorrectAnswer] = useState<number>();
+  const [legitAnswer, setLegitAnswer] = useState<number>(0);
   const [currentAnswerSelected, setCurrentAnswerSelected] =
     useState<string>(" ");
 
@@ -61,16 +61,6 @@ const Game = (): JSX.Element => {
     getData();
   }, [buttonClick]);
 
-  //define come variables for the overall game
-  // const [playingGame, setPlayingGame] = useState<boolean>(false);
-  // const [questions, setQuestions] = useState<Questions | null>(null);
-  // const [currentQuestion, setCurrentQuestion] = useState<Questions | null>(null);
-  // const [correctAnswer, setCorrectAnswer] = useState<number | null>(null);
-  // const [totalQuestions, setTotalQuestions] = useState<number | null>(null);
-  // const [totalAnswers, setTotalAnswers] = useState<number | null>(null);
-  // const [questionLength, setQuestionLength] = useState<number | null>(null);
-
-  let questionIncrement = 0;
   const [counter, setCounter] = useState<number>(0);
 
   var questions;
@@ -84,7 +74,7 @@ const Game = (): JSX.Element => {
     //console.log(currentAnswerSelected);
 
     //
-    if (currentAnswerSelected == " " ) {
+    if (currentAnswerSelected == " ") {
       Swal.fire({
         toast: true,
         text: "Select an option ",
@@ -96,39 +86,39 @@ const Game = (): JSX.Element => {
         return;
       });
     } else {
-      //console.log(db.get("KINGSWORD_GAME_SCORE"));
-      // let correct = parseInt(db.get("KINGSWORD_GAME_SCORE")) || 0;
+    
       for (let i = 0; i < questions.options.length; i++) {
         if (
           currentAnswerSelected ==
           questions.options[questions.correctAnswer].toLowerCase().trim()
         ) {
           console.log("correct");
-          //db.update("KINGSWORD_GAME_SCORE",`${correct + 1}`);
-          setCorrectAnswer(correctAnswer + 1);
+          db.update("KINGSWORD_GAME_SCORE",`${legitAnswer + 1}`);
+          setLegitAnswer(()=>legitAnswer + 1);
           setCurrentAnswerSelected(" ");
           break;
         } else {
           console.log("incorrect");
+          setCurrentAnswerSelected(" ");
+          
           break;
         }
       }
 
-      if (counter !== parseInt(db.get("KINGSWORD_GAME_TOTAL_QUESTIONS"))) {
+      if (counter + 1 == parseInt(db.get("KINGSWORD_GAME_TOTAL_QUESTIONS"))) {
+       
+        Swal.fire({
+          toast: true,
+          text: "Game over you scored" + parseInt(db.get("KINGSWORD_GAME_SCORE")),
+          icon: "success",
+          position: "top",
+          showConfirmButton: false,
+        }).then((willProceed) => {
+          window.location.reload();
+        });
+      } else {
         setButtonClick(true);
         setCounter(counter + 1);
-      } else {
-      
-          Swal.fire({
-            toast:true,
-            text:"Game over you scored" + correctAnswer,
-            icon:"success",
-            position:"top",
-            timer:5000,
-            showConfirmButton:false
-          }).then((willProceed)=>{
-            window.location.reload();
-          });
       }
     }
   };
@@ -141,7 +131,7 @@ const Game = (): JSX.Element => {
 
   return (
     <React.Fragment>
-      <section className="container-fluid p-0" style={{"overflowX":"hidden"}}>
+      <section className="container-fluid p-0" style={{ overflowX: "hidden" }}>
         <h5 className="fs-5 fw-bold my-3 p-2 text-capitalize">
           {" "}
           <p
