@@ -11,6 +11,7 @@
       - [Screenshots](#screenshots)
       - [Technologies](#technologies)
       - [ToDo](#todo)
+      - [Contributions](#contributions)
       - [Author](#author)
 
 
@@ -45,15 +46,22 @@ Below are the technologies I used.
 
 | Task | Status | Implemented |
 | ---- | ------ | ----------- |
-| Update README.md File | [ in progress ] | [ yes ] |
+| Update README.md File | [ done ] | [ yes ] |
 | Setup App Pages | [ done] | [yes ] |
-| Setup App Include Files | [ in progress] | [yes ] |
+| Setup App Include Files | [ done] | [yes ] |
 | Setup App Components | [ done] | [yes ] |
 | Setup Application Routing | [done ] | [ yes ] |
-| Frontend Development / Design | [ not yet] | [ no ] |
-| Firebase Connection | [ not yet] | [ no ] |
-| Project Conclusion | [ not yet] | [ no ] |
+| Frontend Development / Design | [ done] | [ yes ] |
+| Firebase Connection => Version 2 Of Project| [ in progress] | [ no ] |
+| Project Conclusion | [ done] | [ yes ] |
 
+
+#### Contributions
+
+The *questions/quizData.json* file contains the game questions, you can add to the questions or edit already set ones!
+
+
+**Version 2** would add user authentication with google **Gmail** and also keep a recent games taken and also the leaderboard system to compete amongst friends 
 
 #### Author
 
