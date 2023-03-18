@@ -21,7 +21,13 @@ This web application was built to help church members get a clearer picture of a
 
 #### Screenshots
 
-I would add this later 
+
+![screenshot of the Main Page](/src/assets/screenshots/screenshot1.png)
+![screenshot of the Category Page](/src/assets/screenshots/screenshot2.png)
+![screenshot of the Game Page](/src/assets/screenshots/screenshot3.png)
+![screenshot of the Result Page](/src/assets/screenshots/screenshot4.png)
+![screenshot of the Result Page 2](/src/assets/screenshots/screenshot5.png)
+![screenshot of the Not Found Page](/src/assets/screenshots/screenshot6.png)
 
 
 
