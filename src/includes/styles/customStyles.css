@@ -147,7 +147,7 @@
 	
 }
 
-.result-container
+.result-container, .not-found-container
 {
     height: 100vh;
 	width: 100%;

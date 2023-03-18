@@ -41,12 +41,12 @@ const Result = (): JSX.Element => {
 
   return (
     <React.Fragment>
-      <section className="container-fluid p-0 result-container d-flex align-items-center justify-content-center flex-column">
+      <section className="container-fluid p-0 result-container d-flex align-items-center justify-content-around flex-column">
         {showConfetti && <Confetti />}
         <section className="remark-heading">
-          <h2 className="text-capialize text-center fw-bold fs-2">{db.get("KINGSWORD_GAME_REMARK")}</h2>
+          <h2 className="text-capialize text-center fw-bold fs-2 my-2">{db.get("KINGSWORD_GAME_REMARK")}</h2>
         </section>
-        <section className="test-result d-flex align-items-center justify-content-center my-3">
+        <section className="test-result d-flex align-items-center justify-content-center">
           <img src={Achievement} className="m-auto" />
         </section>
         <section className="score-container">
@@ -63,6 +63,7 @@ const Result = (): JSX.Element => {
           className="brand-button my-3 width-toggle-6"
           onClick={navigateToCategory}
         />
+        <br/><br/>
         <Footer resultPage={<CurrentPageNotch />} />
       </section>
     </React.Fragment>
