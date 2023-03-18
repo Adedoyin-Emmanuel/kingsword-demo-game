@@ -53,6 +53,7 @@ Below are the technologies I used.
 | Setup Application Routing | [done ] | [ yes ] |
 | Frontend Development / Design | [ done] | [ yes ] |
 | Firebase Connection => Version 2 Of Project| [ in progress] | [ no ] |
+| PWA Technology | [ not yet, until all questions are fully set] | [ no ] |
 | Project Conclusion | [ done] | [ yes ] |
 
 
