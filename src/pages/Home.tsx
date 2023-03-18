@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import CurrentPageNotch from "../components/app-current-page-notch";
 import Footer from "../components/app-footer";
@@ -6,11 +6,11 @@ import Swal from "sweetalert2";
 import ChurchImage from "./../assets/images/family7.svg";
 import Button from "../components/button";
 import db from "../backend/db";
-import particlesJS from 'particles.js';
-
+import { configPath } from "../includes/scripts/particle-js-config";
 
 const Home = (): JSX.Element => {
   const navigateTo = useNavigate();
+  
   const handleButtonClick = (): void => {
     if (db.get("KINGSWORD_GAME_USERNAME") !== "undefined")  {
       navigateTo("/app/category");
