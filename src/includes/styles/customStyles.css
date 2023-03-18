@@ -90,12 +90,11 @@
 
 .current-page-notch
 {
-    width:3px;
+    width:5px;
     height:5px;
     border-radius:50% !important;
     margin-top: 5px;
-    background:var(--brand-category-love-color-2);
-    outline:2px solid var(--brand-white-color);
+    background: var(--brand-white-color);
 }
 
 

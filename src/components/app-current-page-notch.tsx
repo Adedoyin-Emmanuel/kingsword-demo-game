@@ -4,7 +4,7 @@ const CurrentPageNotch = ():JSX.Element => {
     return(
         <React.Fragment>
             
-            <section className="current-page-notch">
+            <section className="current-page-notch shadow">
             
             </section>
             
