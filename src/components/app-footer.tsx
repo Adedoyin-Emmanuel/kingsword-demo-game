@@ -7,18 +7,19 @@ interface footerActivePageNotch {
   homePage?: JSX.Element;
   categoryPage?: JSX.Element;
   resultPage?: JSX.Element;
+  className?: string;
 }
 const Footer = ({
   homePage,
   categoryPage,
   resultPage,
- 
+  className
 }: footerActivePageNotch): JSX.Element => {
 
 
   return (
     <React.Fragment>
-      <section className="app-footer d-flex align-items-center justify-content-between brand-category-love-color p-2 d-lg-none">
+      <section className={`app-footer d-flex align-items-center justify-content-between brand-category-love-color p-2 d-lg-none ${className}`}>
       
         <section className="home d-flex align-items-center justify-content-center flex-column mx-4" onClick={navigateToHome}>
           <img
