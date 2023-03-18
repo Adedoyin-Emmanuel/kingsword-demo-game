@@ -238,8 +238,11 @@
     user-select: none;
 }
 
-.answer-container-inner-section:hover
+.answer-container-inner-section:hover, .answer-container-inner-section-active
 {
+    width:90px;
+    height:90px;
+    border-radius: 50% !important;
     background:var(--brand-category-love-color);
     border:5px solid var(--brand-category-love-color-3);
     color:var(--brand-white-color);

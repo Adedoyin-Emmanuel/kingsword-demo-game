@@ -48,7 +48,7 @@ const Game = (): JSX.Element => {
       const timer = setTimeout(() => {
         setShowConfetti(false);
         
-        navigateTo(`/app/result/${category}?result=${db.get("KINGSWORD_GAME_SCORE")}`);
+        navigateTo(`/app/result/${category}}`);
         
       }, 7000);
       return () => clearTimeout(timer);
@@ -60,7 +60,7 @@ const Game = (): JSX.Element => {
       return $.ajax({
         url: "/questions/quizData.json",
       });
-    };
+    };  
 
     const getData = async () => {
       const response = await fetchData();
@@ -86,6 +86,8 @@ const Game = (): JSX.Element => {
   }
 
   const handleButtonClick = (): void => {
+    //remove the active button class
+     $(".answer-container-inner-section").removeClass("answer-container-inner-section-active");
     //check if the user selects a valid answer
     if (currentAnswerSelected == " ") {
       Swal.fire({
@@ -116,6 +118,7 @@ const Game = (): JSX.Element => {
 
       if (counter + 1 == parseInt(db.get("KINGSWORD_GAME_TOTAL_QUESTIONS"))) {
         setShowConfetti(true);
+       // db.create("KINGSWORD_GAME_LEGIT_SCORE",)
       } else {
         setButtonClick(true);
         setCounter(counter + 1);
@@ -128,6 +131,10 @@ const Game = (): JSX.Element => {
       event.currentTarget.textContent.toLowerCase().trim()
     );
     
+    //remove the class from any previous element that was clicked || selected
+   $(".answer-container-inner-section").removeClass("answer-container-inner-section-active");
+   $(event.currentTarget).addClass("answer-container-inner-section-active");
+  
   };
 
   return (

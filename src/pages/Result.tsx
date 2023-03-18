@@ -12,14 +12,13 @@ const Result = (): JSX.Element => {
   const { category } = useParams();
   const location = useLocation();
   const [showConfetti, setShowConfetti] = useState<boolean>(false);
-  /*this would return only the userscore, removing the result and = sign*/
-  const userScore = parseInt(location.search.substring(8));
+
   let remark = "";
   
   useMemo(() => {
     const totalQuestionsTaken =
       parseInt(db.get("KINGSWORD_GAME_TOTAL_QUESTIONS")) || 0;
-    const scorePercentage = (userScore / totalQuestionsTaken) * 100;
+    const scorePercentage = (parseInt(db.get("KINGSWORD_GAME_SCORE")) / totalQuestionsTaken) * 100;
 
     //check if the users scores above or below average!
     if (scorePercentage >= 75) {
