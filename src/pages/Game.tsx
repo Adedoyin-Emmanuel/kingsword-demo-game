@@ -1,5 +1,5 @@
 import React, { MouseEvent, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import Question from "../components/question";
 import Answer from "../components/answer";
@@ -37,6 +37,7 @@ const Game = (): JSX.Element => {
   const [answerSelected, setAnswerSelected] = useState<boolean>(false);
   const [legitAnswer, setLegitAnswer] = useState<number>(0);
   const [showConfetti, setShowConfetti] = useState<boolean>(false);
+  const navigateTo = useNavigate();
 
   const [currentAnswerSelected, setCurrentAnswerSelected] =
     useState<string>(" ");
@@ -46,7 +47,8 @@ const Game = (): JSX.Element => {
     if (showConfetti) {
       const timer = setTimeout(() => {
         setShowConfetti(false);
-        window.location.reload();
+        
+        navigateTo(`/app/result/${category}?result=${db.get("KINGSWORD_GAME_SCORE")}`);
         
       }, 7000);
       return () => clearTimeout(timer);
@@ -84,10 +86,7 @@ const Game = (): JSX.Element => {
   }
 
   const handleButtonClick = (): void => {
-    //check if answer matches
-    //console.log(currentAnswerSelected);
-
-    //
+    //check if the user selects a valid answer
     if (currentAnswerSelected == " ") {
       Swal.fire({
         toast: true,
@@ -105,15 +104,12 @@ const Game = (): JSX.Element => {
           currentAnswerSelected ==
           questions.options[questions.correctAnswer].toLowerCase().trim()
         ) {
-          console.log("correct");
           db.update("KINGSWORD_GAME_SCORE", `${legitAnswer + 1}`);
           setLegitAnswer(() => legitAnswer + 1);
           setCurrentAnswerSelected(" ");
           break;
         } else {
-          console.log("incorrect");
           setCurrentAnswerSelected(" ");
-
           break;
         }
       }
@@ -132,7 +128,6 @@ const Game = (): JSX.Element => {
       event.currentTarget.textContent.toLowerCase().trim()
     );
     
-    //setShowConfetti(true);
   };
 
   return (

@@ -16,7 +16,7 @@ const App = (): JSX.Element => {
           <Route path="/app" element={<Home />} />
           <Route path="/app/category" element={<Category />} />
           <Route path="/app/category/:category" element={<Game />} />
-          <Route path="/app/result" element={<Result />} />
+          <Route path="/app/result:category" element={<Result />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
