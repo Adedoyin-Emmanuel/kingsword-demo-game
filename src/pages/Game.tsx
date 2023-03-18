@@ -37,6 +37,7 @@ const Game = (): JSX.Element => {
   const [answerSelected, setAnswerSelected] = useState<boolean>(false);
   const [legitAnswer, setLegitAnswer] = useState<number>(0);
   const [showConfetti, setShowConfetti] = useState<boolean>(false);
+  const [buttonText, setButtonText] = useState<string>("next question");
   const navigateTo = useNavigate();
 
   const [currentAnswerSelected, setCurrentAnswerSelected] =
@@ -47,9 +48,8 @@ const Game = (): JSX.Element => {
     if (showConfetti) {
       const timer = setTimeout(() => {
         setShowConfetti(false);
-        
+
         navigateTo(`/app/result/${category}}`);
-        
       }, 7000);
       return () => clearTimeout(timer);
     }
@@ -60,7 +60,7 @@ const Game = (): JSX.Element => {
       return $.ajax({
         url: "/questions/quizData.json",
       });
-    };  
+    };
 
     const getData = async () => {
       const response = await fetchData();
@@ -87,7 +87,9 @@ const Game = (): JSX.Element => {
 
   const handleButtonClick = (): void => {
     //remove the active button class
-     $(".answer-container-inner-section").removeClass("answer-container-inner-section-active");
+    $(".answer-container-inner-section").removeClass(
+      "answer-container-inner-section-active"
+    );
     //check if the user selects a valid answer
     if (currentAnswerSelected == " ") {
       Swal.fire({
@@ -116,31 +118,42 @@ const Game = (): JSX.Element => {
         }
       }
 
+      //check if that's game end
       if (counter + 1 == parseInt(db.get("KINGSWORD_GAME_TOTAL_QUESTIONS"))) {
         setShowConfetti(true);
-       // db.create("KINGSWORD_GAME_LEGIT_SCORE",)
+        // db.create("KINGSWORD_GAME_LEGIT_SCORE",)
       } else {
         setButtonClick(true);
         setCounter(counter + 1);
       }
     }
   };
+
+  useEffect(() => {
+    //check if the user is on the last question
+
+    if (counter + 1 == parseInt(db.get("KINGSWORD_GAME_TOTAL_QUESTIONS"))) {
+      setButtonText("Last Question");
+    }
+  }, [counter]);
+
   const handleAnswerClick = (event: MouseEvent<HTMLDivElement>) => {
     setAnswerSelected(true);
     setCurrentAnswerSelected(
       event.currentTarget.textContent.toLowerCase().trim()
     );
-    
+
     //remove the class from any previous element that was clicked || selected
-   $(".answer-container-inner-section").removeClass("answer-container-inner-section-active");
-   $(event.currentTarget).addClass("answer-container-inner-section-active");
-  
+    $(".answer-container-inner-section").removeClass(
+      "answer-container-inner-section-active"
+    );
+    $(event.currentTarget).addClass("answer-container-inner-section-active");
   };
 
   return (
     <React.Fragment>
       <section className="container-fluid p-0" style={{ overflowX: "hidden" }}>
-          {(showConfetti) &&   <Confetti />}
+        {showConfetti && <Confetti />}
         <h5 className="fs-5 fw-bold my-3 p-2 text-capitalize">
           {" "}
           <p
@@ -192,8 +205,8 @@ const Game = (): JSX.Element => {
 
           <section className="button-container d-flex align-items-center justify-content-center ">
             <Button
-              text="next question"
-              className="brand-button width-toggle-4 fw-bold my-md-4 my-3"
+              text={buttonText}
+              className="brand-button width-toggle-4 fw-bold my-md-4 my-3 game-btn"
               onClick={handleButtonClick}
             />
           </section>

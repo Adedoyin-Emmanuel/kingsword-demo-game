@@ -4,143 +4,88 @@
       "id": 1,
       "question": "Love is sentimental?",
       "category": "love",
-      "options":[
-         "true",
-         "maybe",
-         "not sure",
-         "never"
-      ],
+      "options": ["true", "maybe", "not sure", "never"],
       "correctAnswer": 3
-      
     },
-    
+
     {
-        "id": 2,
-        "question": "What type of love does God have for us?",
-        "category": "love",
-        "options":[
-           "Agape",
-           "Romantic",
-           "Friendly",
-           "Family"
-        ],
-        "correctAnswer": 0
-        
+      "id": 2,
+      "question": "What type of love does God have for us?",
+      "category": "love",
+      "options": ["Agape", "Romantic", "Friendly", "Family"],
+      "correctAnswer": 0
     },
-   
+
     {
-        "id": 3,
-        "question": "Is romantic love enough for a marriage?",
-        "category": "love",
-        "options":[
-           "yes",
-           "no",
-           "maybe",
-           "probably"
-        ],
-        "correctAnswer": 1
-        
+      "id": 3,
+      "question": "Is romantic love enough for a marriage?",
+      "category": "love",
+      "options": ["yes", "no", "maybe", "probably"],
+      "correctAnswer": 1
     },
-    
+
     {
-        "id": 4,
-        "question": "What type of love does God have for us?",
-        "category": "love",
-        "options":[
-           "Agape",
-           "Romantic",
-           "Friendly",
-           "Family"
-        ],
-        "correctAnswer": 0
-        
+      "id": 4,
+      "question": "You have to love everyone equally?",
+      "category": "love",
+      "options": ["Yes", "Not really", "you can't", "maybe"],
+      "correctAnswer": 2
     },
-    
+
     {
-        "id": 5,
-        "question": "What type of love does God have for us?",
-        "category": "love",
-        "options":[
-           "Agape",
-           "Romantic",
-           "Friendly",
-           "Family"
-        ],
-        "correctAnswer": 0
-        
+      "id": 5,
+      "question": "Love grows as you grow in knowledge",
+      "category": "love",
+      "options": ["True", "False", "usually", "maybe"],
+      "correctAnswer": 0
     },
-    
+
     {
-        "id": 6,
-        "question": "What type of love does God have for us?",
-        "category": "love",
-        "options":[
-           "Agape",
-           "Romantic",
-           "Friendly",
-           "Family"
-        ],
-        "correctAnswer": 0
-        
+      "id": 6,
+      "question": "Love can grow by revelation",
+      "category": "love",
+      "options": ["false", "true", "probably", "maybe"],
+      "correctAnswer": 1
     },
-    
+
     {
-        "id": 7,
-        "question": "What type of love does God have for us?",
-        "category": "love",
-        "options":[
-           "Agape",
-           "Romantic",
-           "Friendly",
-           "Family"
-        ],
-        "correctAnswer": 0
-        
+      "id": 7,
+      "question": "you can grow love by?",
+      "category": "love",
+      "options": ["actions", "gifts", "money", "sex"],
+      "correctAnswer": 0
     },
-    
-    
+
     {
-        "id": 8,
-        "question": "What type of love does God have for us?",
-        "category": "love",
-        "options":[
-           "Agape",
-           "Romantic",
-           "Friendly",
-           "Family"
-        ],
-        "correctAnswer": 0
-        
+      "id": 8,
+      "question": "you can grow your love in a relationship?",
+      "category": "love",
+      "options": ["true", "false", "maybe", "probably"],
+      "correctAnswer": 0
     },
-    
+
     {
-        "id": 9,
-        "question": "What type of love is the God's kind of love?",
-        "category": "love",
-        "options":[
-           "eros",
-           "phlia",
-           "storge",
-           "agape"
-        ],
-        "correctAnswer": 3
-        
+      "id": 9,
+      "question": "You can grow love with all except?",
+      "category": "love",
+      "options": ["knowledge", "revelation", "actions", "money"],
+      "correctAnswer": 3
     },
-    
+
     {
-        "id": 10,
-        "question": "What type of love is the friendship love?",
-        "category": "love",
-        "options":[
-           "eros",
-           "phlia",
-           "storge",
-           "agape"
-        ],
-        "correctAnswer": 1
-        
+      "id": 10,
+      "question": "What type of love is the friendship love?",
+      "category": "love",
+      "options": ["eros", "phlia", "storge", "agape"],
+      "correctAnswer": 1
+    },
+
+    {
+      "id": 10,
+      "question": "Would you ace this game?",
+      "category": "love",
+      "options": ["yes", "no", "probably", "on God"],
+      "correctAnswer": 0
     }
   ]
-  
 }
-
