@@ -8,7 +8,7 @@ const Question = ({ question }: questionProps): JSX.Element => {
   return (
     <React.Fragment>
       <section className="question-container d-flex align-items-center justify-content-center my-3">
-        <h4 className="fw-bold fs-4 text-center text-capitalize">{question}</h4>
+        <h5 className="fw-bold fs-5 text-center text-capitalize">{question}</h5>
       </section>
     </React.Fragment>
   );

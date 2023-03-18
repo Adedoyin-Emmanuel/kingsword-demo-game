@@ -35,6 +35,7 @@ const Game = (): JSX.Element => {
   const [dataToUser, setDataToUser] = useState();
   const [buttonClick, setButtonClick] = useState<boolean>(false);
   const [answerSelected, setAnswerSelected] = useState<boolean>(false);
+  const [correctAnswer, setCorrectAnswer] = useState<number>();
   const [currentAnswerSelected, setCurrentAnswerSelected] =
     useState<string>(" ");
 
@@ -71,9 +72,6 @@ const Game = (): JSX.Element => {
 
   let questionIncrement = 0;
   const [counter, setCounter] = useState<number>(0);
-  const [correctAnswer, setCorrectAnswer] = useState<number>(() =>
-    parseInt(db.get("KINGSWORD_GAME_SCORE"))
-  );
 
   var questions;
 
@@ -86,7 +84,7 @@ const Game = (): JSX.Element => {
     //console.log(currentAnswerSelected);
 
     //
-    if (currentAnswerSelected == " ") {
+    if (currentAnswerSelected == " " ) {
       Swal.fire({
         toast: true,
         text: "Select an option ",
@@ -99,25 +97,39 @@ const Game = (): JSX.Element => {
       });
     } else {
       //console.log(db.get("KINGSWORD_GAME_SCORE"));
+      // let correct = parseInt(db.get("KINGSWORD_GAME_SCORE")) || 0;
       for (let i = 0; i < questions.options.length; i++) {
         if (
-          currentAnswerSelected == questions.options[questions.correctAnswer].toLowerCase().trim()
+          currentAnswerSelected ==
+          questions.options[questions.correctAnswer].toLowerCase().trim()
         ) {
           console.log("correct");
-          
-          //console.log(correctAnswer);
-
+          //db.update("KINGSWORD_GAME_SCORE",`${correct + 1}`);
+          setCorrectAnswer(correctAnswer + 1);
+          setCurrentAnswerSelected(" ");
           break;
         } else {
-      
           console.log("incorrect");
           break;
         }
       }
 
-      //console.log(db.get("KINGSWORD_GAME_SCORE"));
-      setButtonClick(true);
-      setCounter(counter + 1);
+      if (counter !== parseInt(db.get("KINGSWORD_GAME_TOTAL_QUESTIONS"))) {
+        setButtonClick(true);
+        setCounter(counter + 1);
+      } else {
+      
+          Swal.fire({
+            toast:true,
+            text:"Game over you scored" + correctAnswer,
+            icon:"success",
+            position:"top",
+            timer:5000,
+            showConfirmButton:false
+          }).then((willProceed)=>{
+            window.location.reload();
+          });
+      }
     }
   };
   const handleAnswerClick = (event: MouseEvent<HTMLDivElement>) => {
@@ -129,7 +141,7 @@ const Game = (): JSX.Element => {
 
   return (
     <React.Fragment>
-      <section className="container-fluid p-0">
+      <section className="container-fluid p-0" style={{"overflowX":"hidden"}}>
         <h5 className="fs-5 fw-bold my-3 p-2 text-capitalize">
           {" "}
           <p
